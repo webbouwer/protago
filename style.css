@@ -1,0 +1,269 @@
+/*
+* Theme Name: protago
+* Theme URI: http://www.webdesigndenhaag.net/site
+* Description: Theme for development purposes.
+* Version: 0.1
+* Author: Carl Mueller
+* Author URI: http://www.webdesigndenhaag.net
+* License: GPL 3
+* License URI: http://www.gnu.org/licenses/gpl-3.0.html
+*
+* Tags: theme-options, translation-ready, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fluid-layout, responsive-layout, custom-menu, featured-images
+*
+* sources:	https://wordpress.org/themes/getting-started/
+*		https://make.wordpress.org/themes/handbook/review/required/theme-tags/
+*/
+
+/************************* THEME FONTS **************************/
+/* @font-face {
+font-family: 'FONT_NAME';
+src: url('FOLDER/FONT_NAME.eot');
+src: url('FOLDER/FONT_NAME.eot?#iefix') format('embedded-opentype');
+src: local('FONT_NAME'), url('FOLDER/FONT_NAME.ttf') format('truetype');
+} */
+
+
+
+
+/******************** THEME MINIMAL DEFAULT  ********************/
+*
+{
+margin:0;
+padding:0;
+}
+html,
+body
+{
+height:100%;
+width:100%;
+overflow:
+}
+
+h1
+{
+font-size:1.9em;
+}
+h2
+{
+font-size:1.7em;
+}
+h3
+{
+font-size:1.5em;
+}
+h4
+{
+font-size:1.3em;
+}
+h5
+{
+font-size:1.1em;
+}
+
+img
+{
+max-width:100%;
+}
+
+a img
+{
+border:none;
+}
+.clr
+{
+clear:both;
+height:0;
+line-height:0;
+}
+
+.colset1,
+.colset2,
+.colset3
+{
+position:relative;
+width:100%;
+display:block;
+}
+
+/*************************** HTML5 CORE ***************************/
+
+header, section, article, aside, footer
+{
+position:relative;
+width:100%;
+}
+
+/*************************** WP CORE ***************************/
+.wp-caption
+{
+}
+.wp-caption-text
+{
+}
+.sticky
+{
+}
+.screen-reader-text
+{
+}
+.gallery-caption
+{
+}
+.bypostauthor
+{
+}
+.alignright
+{
+}
+.alignleft
+{
+}
+.aligncenter
+{
+}
+
+
+
+
+/********************** THEME LINIAR RESPONSIVE ******************/
+
+
+
+/* all small screens */
+@media screen and (max-width: 539px) {
+
+#sidebar1,
+#sidebar2,
+#maincontent
+{
+float:none !important;
+width:100% !important;
+}
+
+}
+
+/* all medium screens */
+@media screen and (min-width: 540px) {
+
+
+#pagecontainer
+{
+position:relative;
+min-height:100%;
+}
+#topcontainer
+{
+}
+#toplogobox
+{
+float:left;
+width:auto;
+}
+#topmenu ul li
+{
+float:left;
+list-style-type:none;
+}
+
+
+#footercontainer
+{
+position:absolute;
+width:100%;
+bottom:0px;
+}
+
+#footerside1
+{
+float:left;
+width:auto;
+}
+#bottommenu ul li
+{
+float:left;
+list-style-type:none;
+}
+
+#bottomlogobox
+{
+float:right;
+width:auto;
+}
+
+}
+
+/* all other larger screens */
+@media screen and (min-width: 786px) {
+
+
+}
+
+
+
+
+/********************** THEME SPECIFIED RESPONSIVE ******************/
+
+.outermargin
+{
+width:100%;
+max-width:100%;
+margin:0px auto;
+}
+
+
+/* mobile screens landscape / tablet screens portrait  */
+@media screen and (min-width: 540px) and (max-width: 785px){
+
+
+.outermargin
+{
+width:96%;
+}
+
+}
+
+/* tablet screens landscape / medium screens   */
+@media screen and (min-width: 786px) and (max-width: 1367px){
+
+.outermargin
+{
+width:90%;
+max-width:960px;
+}
+
+}
+
+/* large screens  */
+@media screen and (min-width: 1368px) {
+
+.outermargin
+{
+width:70%;
+max-width:1460px;
+}
+
+}
+
+
+
+/********************** THEME MAIN CONTAINERS ******************/
+div#pagecontainer
+{
+}
+
+#topcontainer
+{
+}
+
+div#headercontainer
+{
+}
+div#maincontainer
+{
+}
+#footercontainer
+{
+}
+
+
+
