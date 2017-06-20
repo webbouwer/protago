@@ -6,7 +6,7 @@ locations & positioning
 
 // Include Code Assets
 require get_template_directory() . '/assets/customizer.php'; // customizer functions
-
+require get_template_directory() . '/assets/menu.php';
 
 /* check mobile device
 require get_template_directory() . '/assets/detectmobile.php'; // foundation functions
