@@ -35,17 +35,20 @@ todo: header screen width to switch outermargin parent
 
 // header
 $header_image = get_header_image();
+
 if( ! empty( $header_image ) ){
 echo '<div id="headerimagecontainer">';
-echo '<img src="'.esc_url( $header_image ).'" class="header-image" alt="'.bloginfo( 'description' ).'" />';
+echo '<img src="'.esc_url( $header_image ).'" class="header-image" alt="'.get_bloginfo( 'description' ).'" />';
 echo '</div>';
 }
+
 // headerbox4
 if( function_exists('dynamic_sidebar') && function_exists('is_sidebar_active') && is_sidebar_active('widgets-headerbox4')){
 echo '<div id="headerbox4">';
 dynamic_sidebar('widgets-headerbox4');
 echo '<div class="clr"></div></div>';
 }
+
 // widgets-header default
 if( function_exists('dynamic_sidebar') && function_exists('is_sidebar_active') && is_sidebar_active('widgets-header')){
 dynamic_sidebar('widgets-header');

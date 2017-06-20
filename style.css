@@ -31,6 +31,7 @@ src: local('FONT_NAME'), url('FOLDER/FONT_NAME.ttf') format('truetype');
 margin:0;
 padding:0;
 }
+
 html,
 body
 {

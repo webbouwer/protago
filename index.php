@@ -64,6 +64,11 @@ echo '</head><body ';
 body_class();
 echo '>';
 
+// tracking / js code
+if( get_theme_mod( 'protago_identity_trackingcode', '' ) != '' ) {
+echo get_theme_mod( 'protago_identity_trackingcode' );
+}
+
 echo '<div id="pagecontainer">';
 
 

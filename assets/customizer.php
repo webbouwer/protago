@@ -322,7 +322,7 @@ function protago_theme_customizer( $wp_customize ) {
             	'section'        => 'protago_identity_panel_info',
             	'settings'       => 'protago_identity_contact_text',
             	'type'           => 'textarea',
-        	'priority' => 10,
+        	'priority' => 2,
     	)));
 	$wp_customize->add_setting('protago_identity_copyright_text', array(
 		'sanitize_callback' => 'protago_sanitize_default',
@@ -342,8 +342,10 @@ function protago_theme_customizer( $wp_customize ) {
             	'section'        => 'protago_identity_panel_info',
             	'settings'       => 'protago_identity_disclaimer_text',
             	'type'           => 'textarea',
-        	'priority' => 10,
+        	'priority' => 18,
     	)));
+
+
 
 
 
@@ -531,6 +533,9 @@ function protago_theme_customizer( $wp_customize ) {
         	'priority' => 10,
     	) ) );
 
+
+
+	/* SEO & Featured content */
 	$wp_customize->add_setting('protago_identity_featured_keywords', array(
 		'sanitize_callback' => 'protago_sanitize_default',
     	));
@@ -567,6 +572,18 @@ function protago_theme_customizer( $wp_customize ) {
 		'description' => __( 'Upload or select a featured site-image, this might be used when no source related image is available.', 'protago' ),
         	'priority' => 10,
     	) ) );
+
+	$wp_customize->add_setting('protago_identity_trackingcode', array(
+		'sanitize_callback' => 'protago_sanitize_default',
+    	));
+    	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'protago_identity_trackingcode', array(
+            	'label'          => __( 'Tracking code', 'protago' ),
+            	'section'        => 'protago_identity_panel_featured',
+            	'settings'       => 'protago_identity_trackingcode',
+            	'description'       => __( 'Paste JS code here to be used on start body content (like google tracker)' , 'protago' ),
+            	'type'           => 'textarea',
+        	'priority' => 24,
+    	)));
 
 
 }
@@ -656,31 +673,70 @@ color:<?php echo get_theme_mod('protago_style_colors_footerheaders' , '#494949' 
 $verticalspace = get_theme_mod('protago_settings_spacing_vertical', 2);
 $horizontalspace = get_theme_mod('protago_settings_spacing_horizontal', 4);
 ?>
+
 /* logobox */
+
+
 .logobox a img
 {
-margin:<?php echo $verticalspace*8; ?>px <?php echo $horizontalspace*4; ?>px;
+margin:<?php echo $verticalspace*2; ?>px <?php echo $horizontalspace*4; ?>px;
+width:20%;
+min-width: 40px;
+max-width: 180px;
+height:auto;
 }
+
+.logobox h1,
+.logobox h2,
+.logobox h4,
+.logobox h5
+{
+padding:<?php echo $verticalspace*2; ?>px <?php echo $horizontalspace*4; ?>px;
+}
+
 /* menu items */
+ul.menu li
+{
+margin:<?php echo $verticalspace*2; ?>px <?php echo $horizontalspace; ?>px;
+}
 ul.menu li a
 {
 padding:<?php echo $verticalspace*2; ?>px <?php echo $horizontalspace; ?>px;
 }
+
+#topcontainer ul.menu li,
+#footercontainer ul.menu li
+{
+margin:<?php echo $verticalspace*2; ?>px <?php echo $horizontalspace; ?>px;
+}
+#topcontainer ul.menu li a,
+#footercontainer ul.menu li a
+{
+padding:<?php echo $verticalspace*2; ?>px <?php echo $horizontalspace; ?>px;
+}
+
+
 /* content & widget headers */
+#pagecontentbox
+{
+padding:<?php echo $verticalspace*6; ?>px <?php echo $horizontalspace*2; ?>px;
+}
+
+
+
 #pagecontentbox h1,
 #pagecontentbox h2,
 #pagecontentbox h3,
-#pagecontentbox h4
-{
-padding:<?php echo $verticalspace*6; ?>px <?php echo $horizontalspace*4; ?>px;
-}
+#pagecontentbox h4,
 .widget h1,
 .widget h2,
 .widget h3,
 .widget h4
 {
-padding:<?php echo $verticalspace*2; ?>px <?php echo $horizontalspace*4; ?>px;
+padding-top:<?php echo $verticalspace*3; ?>px;
+padding-bottom:<?php echo $verticalspace*3; ?>px;
 }
+
 #pagecontentbox .innerpadding h1,
 #pagecontentbox .innerpadding h2,
 #pagecontentbox .innerpadding h3,
@@ -693,16 +749,23 @@ padding:<?php echo $verticalspace*2; ?>px <?php echo $horizontalspace*4; ?>px;
 padding:0;
 }
 
-/* content */
+/* content innerpadding */
 #maincontent .innerpadding
 {
-padding:<?php echo $verticalspace*2; ?>px <?php echo $horizontalspace*4; ?>px;
+padding:0px;
+}
+
+
+#sidebar1 .innerpadding,
+#sidebar2 .innerpadding
+{
+padding:<?php echo $verticalspace*6; ?>px 0px;
 }
 /* widget content */
 .widget .innerpadding,
 #bottommenu .innerpadding
 {
-padding:<?php echo $verticalspace*4; ?>px <?php echo $horizontalspace*4; ?>px;
+margin:<?php echo $verticalspace*4; ?>px <?php echo $horizontalspace*4; ?>px;
 }
 <?php
 
