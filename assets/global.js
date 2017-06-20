@@ -12,6 +12,7 @@ Version: 0.1.2
 Author URI: https://oddsized.com
 */
 (function ($) {
+
 	$(document).ready(function () {
 
     $('.sub-menu').hide();
@@ -24,6 +25,15 @@ Author URI: https://oddsized.com
             $(this).children('.sub-menu').slideUp(200);
         }
     );
+
+
+
+
+
+
+
+
 	});
+
 })(jQuery);
 

@@ -20,7 +20,9 @@
  * @version 2.6.4
  * @licence GPLv2
  */
+
 /*
+
 Plugin Name: Menu Image
 Plugin URI: http://html-and-cms.com/plugins/menu-image/
 Description: Provide uploading images to menu item

@@ -1,5 +1,5 @@
 /*
-* Theme Name: protago
+* Theme Name: protago 1.0
 * Theme URI: http://www.webdesigndenhaag.net/site
 * Description: Theme for development purposes.
 * Version: 0.1
@@ -12,8 +12,6 @@
 *
 * sources:	https://wordpress.org/themes/getting-started/
 *		https://make.wordpress.org/themes/handbook/review/required/theme-tags/
-GitHub Theme URI: https://github.com/Oddsized/protago
-GitHub Branch: master
 */
 
 /************************* THEME FONTS **************************/
@@ -124,8 +122,12 @@ width:100%;
 {
 }
 
+/* menu basic */
 
-
+ul ul.sub-menu
+{
+    display:none;
+}
 
 /********************** THEME LINIAR RESPONSIVE ******************/
 
@@ -156,12 +158,20 @@ min-height:100%;
 #topcontainer
 {
 }
-#toplogobox
+#toplogobox,
+#bottomlogobox
 {
 float:left;
 width:auto;
 }
-#topmenu ul li
+
+#bottomlogobox
+{
+float:right;
+}
+
+#topmenu ul li,
+#bottommenu ul li
 {
 float:left;
 list-style-type:none;
@@ -180,17 +190,7 @@ bottom:0px;
 float:left;
 width:auto;
 }
-#bottommenu ul li
-{
-float:left;
-list-style-type:none;
-}
 
-#bottomlogobox
-{
-float:right;
-width:auto;
-}
 
 }
 

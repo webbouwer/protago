@@ -42,62 +42,22 @@ echo '<meta name="description" content="'.$site_description.'">'
 
 wp_head(); // http://codex.wordpress.org/Function_Reference/wp_head
 
+
+echo '<script src="'.esc_url( get_template_directory_uri() ).'/assets/global.js"></script>';
+
+echo '<script src="'.esc_url( get_template_directory_uri() ).'/assets/responsive.js"></script>';
+
+
 if ( ! isset( $content_width ) ) $content_width = 900;
 
 /* Global css & javascript ( to be replace with theme custom files ) */
 ?>
+
+
+
 <!-- custom header elements -->
 <link href="https://fonts.googleapis.com/css?family=Lato|Martel" rel="stylesheet">
-<script language="javascript" type="text/javascript">
-jQuery(function ($) {
-	$(document).ready(function() {
 
-		var rtime;
-		var timeout = false;
-		var delta = 200;
-		$(window).resize(function() {
-			rtime = new Date();
-			if (timeout === false) {
-				timeout = true;
-				setTimeout(resizeend, delta);
-			}
-		});
-
-		function resizeend() {
-			if (new Date() - rtime < delta) {
-				setTimeout(resizeend, delta);
-			} else {
-				timeout = false;
-				protago_js_on_resize(); //alert('Done resizing');
-			}
-		}
-
-
-		// add page bottom margin for full content view if absolute or fixed positioned footer
-		function addPageBottomPadding(){
-			if ( $('#footercontainer').css("position") === "absolute" || $('#footercontainer').css("position") === "fixed") {
-			var footerheight = $('#footercontainer').outerHeight(true); // height including padding etc.
-
-			var endcontentelement = '#maincontentcontainer';
-			if( $('#subcontentcontainer').length > 0 ){
-				endcontentelement = '#subcontentcontainer';
-			}
-
-			$(endcontentelement).css("padding-bottom", footerheight); // add bottom padding
-			}else{
-			$(endcontentelement).css("padding-bottom", 0);
-			}
-		}
-
-		function protago_js_on_resize(){
-			addPageBottomPadding();
-		}
-
-		protago_js_on_resize();
-
- 	});
-});
-</script>
 <?php
 
 echo '</head><body ';
