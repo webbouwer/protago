@@ -25,6 +25,16 @@ function protago_theme_customizer( $wp_customize ) {
         'title'    => __('Colors', 'protago'),
 		'priority' => 20,
     ));
+
+	$wp_customize->add_panel('protago_content_panel', array(
+        'title'    => __('Content', 'protago'),
+        'priority' => 24,
+    ));
+	$wp_customize->add_panel('protago_sidebar_panel', array(
+        'title'    => __('Sidebars', 'protago'),
+        'priority' => 28,
+    ));
+
 	$wp_customize->add_panel('protago_styling_panel', array(
 		'title'    => __('Styling', 'protago'),
 		'priority' => 30,
@@ -38,15 +48,21 @@ function protago_theme_customizer( $wp_customize ) {
 
 
 	// ADD sections (child sections)
-		$wp_customize->add_section('protago_settings_content', array(
-        	'title'    => __('Content', 'protago'),
-        	'panel'  => 'protago_settings_panel',
-    	));
-    	$wp_customize->add_section('protago_settings_sidebar', array(
-        	'title'    => __('Sidebar', 'protago'),
-        	'panel'  => 'protago_settings_panel',
+
+		$wp_customize->add_section('protago_content_displaymeta', array(
+        	'title'    => __('Post Meta', 'protago'),
+        	'panel'  => 'protago_content_panel',
     	));
 
+    	$wp_customize->add_section('protago_settings_sidebar1', array(
+        	'title'    => __('Sidebar 1', 'protago'),
+        	'panel'  => 'protago_sidebar_panel',
+    	));
+
+    	$wp_customize->add_section('protago_settings_sidebar2', array(
+        	'title'    => __('Sidebar 2', 'protago'),
+        	'panel'  => 'protago_sidebar_panel',
+    	));
 
 		$wp_customize->add_section('protago_styling_lettertype', array(
         	'title'    => __('Lettertype', 'protago'),
@@ -74,15 +90,16 @@ function protago_theme_customizer( $wp_customize ) {
 		'priority' => 30,
     	));
 
+
     	$wp_customize->add_section('protago_identity_panel_logo', array(
         	'title'    => __('Logo image', 'protago'),
         	'panel'  => 'protago_identity_panel',
 		'priority' => 10,
     	));
 
-    	$wp_customize->add_section('protago_identity_panel_featured', array(
+    	$wp_customize->add_section('protago_settings_panel_featured', array(
         	'title'    => __('SEO & Featured data', 'protago'),
-        	'panel'  => 'protago_identity_panel',
+        	'panel'  => 'protago_settings_panel',
 		'priority' => 30,
     	));
 
@@ -116,8 +133,8 @@ function protago_theme_customizer( $wp_customize ) {
     	$wp_customize->add_section('static_front_page', array(
         	'title'    => __('Static Frontpage', 'protago'),
         	'description'    => __('Select one of your pages to be the frontpage. The selected page might have it\'s own page-template to make a special layout. This setting overrules any custom frontpage settings.', 'protago'),
-        	'panel'  => 'protago_settings_panel',
-		'priority' => 400,
+        	'panel'  => 'protago_content_panel',
+		'priority' => 1,
     	));
 
 
@@ -133,7 +150,7 @@ function protago_theme_customizer( $wp_customize ) {
     ));
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'protago_settings_content_datedisplay', array(
             'label'          => __( 'Date and Time display', 'protago' ),
-            'section'        => 'protago_settings_content',
+            'section'        => 'protago_content_displaymeta',
             'settings'       => 'protago_settings_content_datedisplay',
             'type'           => 'radio',
  	    	'description'    => __( 'Select to display the date.', 'protago' ),
@@ -152,7 +169,7 @@ function protago_theme_customizer( $wp_customize ) {
     ));
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'protago_settings_content_dateformat', array(
             'label'          => __( 'Date and Time format', 'protago' ),
-            'section'        => 'protago_settings_content',
+            'section'        => 'protago_content_displaymeta',
             'settings'       => 'protago_settings_content_dateformat',
             'type'           => 'radio',
  	    	'description'    => __( 'Select to display the date.', 'protago' ),
@@ -168,7 +185,7 @@ function protago_theme_customizer( $wp_customize ) {
     ));
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'protago_settings_content_authordisplay', array(
             'label'          => __( 'Author name display', 'protago' ),
-            'section'        => 'protago_settings_content',
+            'section'        => 'protago_content_displaymeta',
             'settings'       => 'protago_settings_content_authordisplay',
             'type'           => 'radio',
  	    	'description'    => __( 'Select to display the author name.', 'protago' ),
@@ -234,7 +251,7 @@ function protago_theme_customizer( $wp_customize ) {
     ));
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'protago_settings_sidebar1_display', array(
             'label'          => __( 'Sidebar 1 Position', 'protago' ),
-            'section'        => 'protago_settings_sidebar',
+            'section'        => 'protago_settings_sidebar1',
             'settings'       => 'protago_settings_sidebar1_display',
             'type'           => 'radio',
  	    	'description'    => __( 'Select sidebar 1 display position.', 'protago' ),
@@ -250,7 +267,7 @@ function protago_theme_customizer( $wp_customize ) {
     ));
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'protago_settings_sidebar1_width', array(
             'label'          => __( 'Sidebar 1 large width', 'protago' ),
-            'section'        => 'protago_settings_sidebar',
+            'section'        => 'protago_settings_sidebar1',
             'settings'       => 'protago_settings_sidebar1_width',
             'type'           => 'number',
  	    	'description'    => __( 'Select sidebar 1 width (percentage) for large screens.', 'protago' ),
@@ -262,7 +279,7 @@ function protago_theme_customizer( $wp_customize ) {
     ));
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'protago_settings_sidebar1_width2', array(
             'label'          => __( 'Sidebar 1 medium width', 'protago' ),
-            'section'        => 'protago_settings_sidebar',
+            'section'        => 'protago_settings_sidebar1',
             'settings'       => 'protago_settings_sidebar1_width2',
             'type'           => 'number',
  	    	'description'    => __( 'Select sidebar 1 width (percentage) for medium (tablet) screens.', 'protago' ),
@@ -274,7 +291,7 @@ function protago_theme_customizer( $wp_customize ) {
     ));
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'protago_settings_sidebar2_display', array(
             'label'          => __( 'Sidebar 2 Position', 'protago' ),
-            'section'        => 'protago_settings_sidebar',
+            'section'        => 'protago_settings_sidebar2',
             'settings'       => 'protago_settings_sidebar2_display',
             'type'           => 'radio',
  	    	'description'    => __( 'Select sidebar 2 display position.', 'protago' ),
@@ -290,7 +307,7 @@ function protago_theme_customizer( $wp_customize ) {
     ));
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'protago_settings_sidebar2_width', array(
             'label'          => __( 'Sidebar 2 large width', 'protago' ),
-            'section'        => 'protago_settings_sidebar',
+            'section'        => 'protago_settings_sidebar2',
             'settings'       => 'protago_settings_sidebar2_width',
             'type'           => 'number',
  	    	'description'    => __( 'Select sidebar 2 width (percentage) for large screens.', 'protago' ),
@@ -302,7 +319,7 @@ function protago_theme_customizer( $wp_customize ) {
     ));
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'protago_settings_sidebar2_width2', array(
             'label'          => __( 'Sidebar 2 medium width', 'protago' ),
-            'section'        => 'protago_settings_sidebar',
+            'section'        => 'protago_settings_sidebar2',
             'settings'       => 'protago_settings_sidebar2_width2',
             'type'           => 'number',
  	    	'description'    => __( 'Select sidebar 2 width (percentage) for medium (tablet) screens.', 'protago' ),
@@ -541,7 +558,7 @@ function protago_theme_customizer( $wp_customize ) {
     	));
     	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'protago_identity_featured_keywords', array(
             	'label'          => __( 'Meta keywords', 'protago' ),
-            	'section'        => 'protago_identity_panel_featured',
+            	'section'        => 'protago_settings_panel_featured',
             	'settings'       => 'protago_identity_featured_keywords',
 				'description' => __( 'SEO meta data keywords, comma separated (replaced by specific content tags if available).', 'protago' ),
             	'type'           => 'textarea',
@@ -554,7 +571,7 @@ function protago_theme_customizer( $wp_customize ) {
     	));
     	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'protago_identity_featured_text', array(
             	'label'          => __( 'Meta description', 'protago' ),
-            	'section'        => 'protago_identity_panel_featured',
+            	'section'        => 'protago_settings_panel_featured',
             	'settings'       => 'protago_identity_featured_text',
 				'description' => __( 'SEO meta data and snippets (replaced by specific content description if available).', 'protago' ),
             	'type'           => 'textarea',
@@ -567,7 +584,7 @@ function protago_theme_customizer( $wp_customize ) {
 	));
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'protago_identity_featured_image', array(
         	'label'    => __( 'Site featured image', 'protago' ),
-        	'section'  => 'protago_identity_panel_featured',
+        	'section'  => 'protago_settings_panel_featured',
         	'settings' => 'protago_identity_featured_image',
 		'description' => __( 'Upload or select a featured site-image, this might be used when no source related image is available.', 'protago' ),
         	'priority' => 10,
@@ -578,7 +595,7 @@ function protago_theme_customizer( $wp_customize ) {
     	));
     	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'protago_identity_trackingcode', array(
             	'label'          => __( 'Tracking code', 'protago' ),
-            	'section'        => 'protago_identity_panel_featured',
+            	'section'        => 'protago_settings_panel_featured',
             	'settings'       => 'protago_identity_trackingcode',
             	'description'       => __( 'Paste JS code here to be used on start body content (like google tracker)' , 'protago' ),
             	'type'           => 'textarea',
@@ -608,8 +625,10 @@ height:100%;
 width:100%;
 background-color:<?php echo get_theme_mod('protago_style_colors_bodybg', '#ffffff'); ?>;
 color:<?php echo get_theme_mod('protago_style_colors_bodytext', '#494949' ); ?>;
+/* EXPERIMENTAL Global font-size */
 font-size: <?php echo get_theme_mod('protago_styling_lettertype_fontsize', 5 )*0.2; ?>em;
 }
+
 a {
 color:<?php echo get_theme_mod('protago_style_colors_bodylink', '#353535' ) ?> ;
 }
@@ -667,6 +686,10 @@ color:<?php echo get_theme_mod('protago_style_colors_footer_linkhover', '#5e5e5e
 {
 color:<?php echo get_theme_mod('protago_style_colors_footerheaders' , '#494949' ); ?> ;
 }
+
+/*
+	EXPERIMENTAL STYLING - SPACINGS
+*/
 <?php
 
 /* Spacing */
@@ -767,6 +790,8 @@ padding:<?php echo $verticalspace*6; ?>px 0px;
 {
 margin:<?php echo $verticalspace*4; ?>px <?php echo $horizontalspace*4; ?>px;
 }
+
+/* SIDEBARS MAINCONTENT */
 <?php
 
 
@@ -782,13 +807,34 @@ $sidebar1width2 = 0;
 $sidebar2width2 = 0;
 $maincontentwidth2 = 100;
 
-if( $sidebar1display != 'none' ){
+	/*
+	if( function_exists('dynamic_sidebar') && function_exists('is_sidebar_active') && get_theme_mod('protago_settings_sidebar1_display','right') != 'none' &&
+	( is_sidebar_active('sidebar') || has_nav_menu( 'sidemenu' ) || is_sidebar_active('widgets-contentbox2') || is_sidebar_active('widgets-contentbox3')) ){
+	*/
+
+
+
+
+// sidebar 1
+if( function_exists('dynamic_sidebar') && function_exists('is_sidebar_active') && get_theme_mod('protago_settings_sidebar1_display','none') != 'none' &&
+	( is_sidebar_active('sidebar') || has_nav_menu( 'sidemenu' ) || is_sidebar_active('widgets-contentbox2') || is_sidebar_active('widgets-contentbox3')) ){
+
 $sidebar1width = get_theme_mod('protago_settings_sidebar1_width',37);
 $sidebar1width2 = get_theme_mod('protago_settings_sidebar1_width2',30);
+
+}else{
+	$sidebar1display = 'none';
 }
-if( $sidebar2display != 'none' ){
+
+// sidebar 2
+if( function_exists('dynamic_sidebar') && function_exists('is_sidebar_active') && get_theme_mod('protago_settings_sidebar2_display','none') != 'none' &&
+	(is_sidebar_active('widgets-contentbox4') || is_sidebar_active('widgets-contentbox5') || is_sidebar_active('widgets-contentbox6') )){
+
 $sidebar2width = get_theme_mod('protago_settings_sidebar2_width',20);
 $sidebar2width2 = get_theme_mod('protago_settings_sidebar2_width2',14);
+
+}else{
+	$sidebar2display = 'none';
 }
 
 $maincontentwidth = $maincontentwidth - ( $sidebar1width + $sidebar2width);
@@ -857,12 +903,13 @@ width:<?php echo $maincontentwidth; ?>%;
 }
 add_action( 'wp_head' , 'protago_customize_adaptive' );
 
-
+/*
 function example_() {
 echo '<script type="text/javascript"> ( function( $ ) {';
 echo '// test';
 echo '}); } )( jQuery )</script>';
-}  // End function example_()
+} */
+// End function example_()
 //add_action( 'wp_footer', 'example_', 21);
 
 // http://buildwpyourself.com/building-theme-color-options-customizer/
