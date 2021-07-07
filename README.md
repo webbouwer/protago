@@ -1,2 +1,2 @@
 # protago
-production wp theme
+A multi purpose Wordpress Theme
