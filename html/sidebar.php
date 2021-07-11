@@ -3,7 +3,9 @@
  * index.php
  * default sidebar
  */
-echo '<div id="sidebar">';
+if ( has_nav_menu( 'sidemenu' ) || ( function_exists('is_sidebar_active') && is_sidebar_active('sidebar') ) ){
+
+echo '<div id="sidebar"><div class="sidebarmargin">';
 
 // sidemenu
 if ( has_nav_menu( 'sidemenu' ) ){
@@ -11,6 +13,13 @@ if ( has_nav_menu( 'sidemenu' ) ){
     wp_nav_menu( array( 'theme_location' => 'sidemenu' ) );
   echo '<div class="clr"></div></div></nav></div></div>';
 }
-dynamic_sidebar('sidebar');
+// sidebar
+if( function_exists('is_sidebar_active') && is_sidebar_active('sidebar') ){
+  echo '<div id="sidebar_widgets"><div class="widgets_outermargin">';
+    dynamic_sidebar('sidebar');
+  echo '<div class="clr"></div></div></div>';
+}
 
-echo '<div class="clr"></div></div>';
+echo '<div class="clr"></div></div></div>';
+
+}

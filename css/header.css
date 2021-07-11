@@ -1,0 +1,116 @@
+/* protago
+
+ * mainmenu.css
+
+ */
+
+
+
+/* large screen */
+
+@media all and (min-width: 960px) {
+}
+
+
+
+
+  #header
+
+  {
+
+    position:relative;
+
+    top:0px;
+
+    width:100%;
+
+  }
+
+
+
+  /* header mainbar */
+
+  #mainbar
+
+  {
+
+    position:relative;
+
+    width:100%;
+
+  }
+
+
+    #mainbar.display-left .innerbar,
+    #mainbar.display-inleft .innerbar
+    {
+      display: flex;
+      justify-content: space-between;
+    }
+    #mainbar.display-right .innerbar,
+    #mainbar.display-inright .innerbar
+    {
+      display: flex;
+    	justify-content: space-between;
+    	flex-direction: row-reverse;
+    }
+    #mainbar.display-incenter .innerbar,
+    #mainbar.display-center .innerbar
+    {
+      display: flex;
+    	flex-direction: column;
+    	justify-content: center;
+    	align-items: center;
+    }
+    #mainbar.mobile .innerbar
+    {
+      display:block;
+    }
+
+    .display-incenter #mainmenubox,
+    .display-center #mainmenubox,
+    .display-center #site-titlebox
+    {
+      flex: 1;
+      text-align: center;
+    }
+
+    #mainbar #mainmenubox #mainmenu nav .innerpadding .menu > ul
+    {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+  		margin: 0;
+  		padding: 0;
+    	list-style: none;
+    }
+
+    #mainbar.display-right #mainmenubox #mainmenu nav .innerpadding .menu > ul,
+    #mainbar.display-inright #mainmenubox #mainmenu nav .innerpadding .menu > ul
+    {
+      display: flex;
+    	flex-direction: row-reverse;
+    }
+  	#mainbar #mainmenubox #mainmenu nav .innerpadding .menu > ul > li
+    {
+  		display: flex;
+    	align-items: center;
+    }
+  	#mainbar #mainmenubox #mainmenu nav .innerpadding .menu > ul > li > a {
+  		padding:10px;
+      display:block;
+  	}
+
+  	#mainbar #mainmenubox #mainmenu nav .innerpadding .menu > ul > li#item-logobox
+  	{
+    	flex: 2;
+    }
+
+
+    #mainbar.mobile #mainmenubox #mainmenu nav .innerpadding .menu > ul
+    {
+      display: block;
+    }
+  	#mainbar.mobile #mainmenubox #mainmenu nav .innerpadding .menu > ul > li
+    {
+    }

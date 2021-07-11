@@ -1,0 +1,44 @@
+/* protago
+
+ * content.css
+
+ */
+
+
+
+ /* content */
+
+ @media all and (min-width: 1028px) {
+
+   #content .outermargin
+
+   {
+
+     display: flex;
+
+     /*flex-direction: column;
+
+     justify-content: center;
+
+     align-items: center;*/
+
+   }
+
+   #content .outermargin #maincontent
+
+   {
+
+     flex: 3;
+
+   }
+
+   #content .outermargin #sidebar
+
+   {
+
+     flex: 1;
+
+   }
+
+ }
+

@@ -5,7 +5,11 @@
 
 // get post(s)
 // detect frontpage,page, post custom post or taxonomies
+
+echo '<div id="maincontent"><div class="contentmargin"><div id="loopcontainer">';
+
 if ( have_posts() ) :
+
   while( have_posts() ) : the_post(); ?>
 
     <div id="post-<?php echo get_the_ID(); ?>" <?php post_class(); ?>>
@@ -37,8 +41,13 @@ if ( have_posts() ) :
     echo '</div>';
 
   endwhile;
+
 endif;
 
+echo '<div class="clr"></div></div>';
+
 wp_link_pages();
+
+echo '</div></div>';
 
 wp_reset_query();

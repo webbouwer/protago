@@ -1,44 +1,158 @@
 /*
+
 Theme Name: protago
+
 Theme URI: https://github.com/webbouwer/protago
+
 Author: Webbouwer
+
 Author URI: http://www.webdesigndenhaag.net
+
 Description: A multi purpose theme
+
 Version: 0.0.1
+
 Tested up to: 5.7.2
+
 Requires PHP: 7.4
+
 License: GNU General Public License v3 or later
+
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
 Tags: accessibility-ready
+
 Text Domain: protago
+
 */
 
-body
+
+
+@import "css/header.css";
+
+@import "css/content.css";
+
+@import "css/footer.css";
+
+
+
+/* Global default styles */
+
+*
+
 {
 
+margin:0;
+
+padding:0;
+
 }
+
+html,
+
+body
+
+{
+
+position:relative;
+
+height:100%;
+
+width:100%;
+
+}
+
+
+
+/* Theme Default Styles */
+
+.outermargin
+
+{
+
+  width:100%;
+
+  margin: 0px auto;
+
+}
+
+.contentmargin,
+
+.sidebarmargin,
+
+.widget .innerpadding,
+
+.innerpadding
+
+{
+
+  padding:15px;
+
+}
+
+.clr
+
+{
+
+clear:both;
+
+height:0;
+
+line-height:0;
+
+}
+
+
+
+
+
+
 
 /* WP Default Styles */
+
 .screen-reader-text
+
 {
+
 }
 
+
+
 .alignright
+
 {}
+
 .alignleft
+
 {}
+
 .aligncenter
+
 {}
+
+
 
 .bypostauthor
+
 {}
+
+
 
 .wp-caption
-{}
-.wp-caption-text
-{}
-.gallery-caption
+
 {}
 
-.sticky
+.wp-caption-text
+
 {}
+
+.gallery-caption
+
+{}
+
+
+
+.sticky
+
+{}
+

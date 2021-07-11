@@ -1,0 +1,174 @@
+
+
+/* protago
+
+ * footer.css
+
+ */
+
+
+
+/* Footer widgets */
+
+@media all and (min-width: 1028px) {
+
+  #footer_widgets .outermargin
+
+  {
+
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: center;
+
+    /* align-items: center; */
+
+  }
+
+  #footer_widgets .outermargin .widgetcolumn
+
+  {
+
+    min-width:18%;
+
+  }
+
+}
+
+
+
+/* Footer bottombar */
+
+@media all and (min-width: 1028px) {
+
+  #bottombar .outermargin,
+
+  #bottombar.display-left .outermargin
+
+  {
+
+    display: flex;
+
+    flex-direction: row;
+
+  	justify-content: space-between;
+
+  }
+
+  #bottombar.display-right .outermargin
+
+  {
+
+    display: flex;
+
+    flex-direction: row;
+
+  	justify-content: space-between;
+
+  	flex-direction: row-reverse;
+
+  }
+
+  #bottombar.display-centerleft .outermargin
+
+  {
+
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: center;
+
+  }
+
+  #bottombar.display-centerright .outermargin
+
+  {
+
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: center;
+
+  	flex-direction: row-reverse;
+
+  }
+
+  #footermenubox
+
+  {
+
+    flex: 3;
+
+  }
+
+  #bottombar_widgets
+
+  {
+
+    flex: 2;
+
+  }
+
+  #bottombar.display-centerleft #footermenubox,
+
+  #bottombar.display-centerright #footermenubox
+
+  {
+
+    min-width:24%;
+
+    flex: none;
+
+  }
+
+  #bottombar.display-centerleft #bottombar_widgets,
+
+  #bottombar.display-centerright #bottombar_widgets
+
+  {
+
+    min-width:18%;
+
+    flex: none;
+
+  }
+
+  }
+
+  #bottombar.display-right #footermenubox #footermenu
+
+  {
+
+    text-align:right;
+
+  }
+
+  #bottombar.display-centerleft #footermenubox #footermenu,
+
+  #bottombar.display-centerright #footermenubox #footermenu
+
+  {
+
+    text-align:center;
+
+  }
+
+  #footermenubox #footermenu nav .innerpadding .menu > ul
+
+  {
+
+  }
+
+  #footermenubox #footermenu nav .innerpadding .menu > ul > li
+
+  {
+
+    display:inline-block;
+
+  }
+
+}
+
