@@ -5,11 +5,12 @@
 
 
 $mainbar_display = get_theme_mod('protago_header_mainbar_display', 'right');
+$mainbar_width = get_theme_mod( 'protago_header_mainbar_width', 'content');
 
-echo '<div id="mainbar" class="display-'.$mainbar_display.'"><div class="innerbar">';
+echo '<div id="mainbar" class="display-'.$mainbar_display.'"><div class="outermargin '.$mainbar_width.'"><div class="innerbar">';
 // mainbar logo or title
 if ( get_theme_mod( 'protago_logo_image' ) ){
-  echo '<div id="site-logobox"><div class="innerpadding">';
+  echo '<div id="site-titlebox"><div class="innerpadding">';
   echo '<a href="'.esc_url( home_url( '/' ) ).'" class="site-logo" ';
   echo 'title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" ';
   echo 'rel="home"><img src="'.get_theme_mod( 'protago_logo_image' ).'" ';
@@ -36,6 +37,6 @@ if( function_exists('is_sidebar_active') && is_sidebar_active('mainbar-widgets')
     dynamic_sidebar('mainbar-widgets');
   echo '</div>';
 }
-echo '</div></div>';
+echo '</div></div></div>';
 
 ?>

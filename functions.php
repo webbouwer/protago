@@ -3,7 +3,15 @@
  * functions.php
  */
 
-require get_template_directory() . '/customizer.php'; // customizer functions
+require get_template_directory() . '/customizer/customizer.php'; // customizer global functions
+require get_template_directory() . '/customizer/customizer_identity.php'; // customizer identity functions
+require get_template_directory() . '/customizer/customizer_screen.php'; // customizer screen functions
+require get_template_directory() . '/customizer/customizer_style.php'; // customizer style functions
+require get_template_directory() . '/customizer/customizer_header.php'; // customizer header functions
+require get_template_directory() . '/customizer/customizer_content.php'; // customizer content functions
+require get_template_directory() . '/customizer/customizer_footer.php'; // customizer footer functions
+require get_template_directory() . '/customizer/customizer_frontend_css.php'; // customizer css frontend
+require get_template_directory() . '/customizer/customizer_frontend_js.php'; // customizer javascript frontend
 
 /********* Wordpress Hooks & filters *********/
 
@@ -49,16 +57,26 @@ add_action( 'admin_init', 'theme_editor_styles' );
 function theme_setup_widgets_init() {
 	if (function_exists('register_sidebar')) {
 
-		// the topbar side widget
+		// the topbar side widgets
 		register_sidebar(array(
-			'name' => 'Topbar widgets',
-			'id'   => 'topbar-widgets',
-			'description'   => 'This is the topbar widgetized area.',
+			'name' => 'Topbar widgets 1',
+			'id'   => 'topbar-widgets-1',
+			'description'   => 'This is the topbar widgetized area 1.',
 			'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="innerpadding">',
 			'after_widget'  => '</div><div class="clr"></div></div></div>',
 			'before_title'  => '<div class="widget-titlebox"><h3>',
 			'after_title'   => '</h3></div><div class="widget-contentbox">'
 		));
+		register_sidebar(array(
+			'name' => 'Topbar widgets 2',
+			'id'   => 'topbar-widgets-2',
+			'description'   => 'This is the topbar widgetized area 2.',
+			'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="innerpadding">',
+			'after_widget'  => '</div><div class="clr"></div></div></div>',
+			'before_title'  => '<div class="widget-titlebox"><h3>',
+			'after_title'   => '</h3></div><div class="widget-contentbox">'
+		));
+
 
 		// the mainbar side widget
 		register_sidebar(array(
@@ -128,16 +146,46 @@ function theme_setup_widgets_init() {
 			'after_title'   => '</h3></div><div class="widget-contentbox">'
 		));
 
-		// the bottombar side widget
+		// the bottombar side widget1
 		register_sidebar(array(
-			'name' => 'Bottombar widgets',
-			'id'   => 'bottombar-widgets',
-			'description'   => 'This is the bottombar widgetized area.',
+			'name' => 'Bottombar widgets 1',
+			'id'   => 'bottombar-widgets-1',
+			'description'   => 'This is the bottombar widgetized area 1.',
 			'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="innerpadding">',
 			'after_widget'  => '</div><div class="clr"></div></div></div>',
 			'before_title'  => '<div class="widget-titlebox"><h3>',
 			'after_title'   => '</h3></div><div class="widget-contentbox">'
 		));
+		register_sidebar(array(
+			'name' => 'Bottombar widgets 2',
+			'id'   => 'bottombar-widgets-2',
+			'description'   => 'This is the bottombar widgetized area 2.',
+			'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="innerpadding">',
+			'after_widget'  => '</div><div class="clr"></div></div></div>',
+			'before_title'  => '<div class="widget-titlebox"><h3>',
+			'after_title'   => '</h3></div><div class="widget-contentbox">'
+		));
+
+		// footnotes widgets
+		register_sidebar(array(
+			'name' => 'Footnote widgets 1',
+			'id'   => 'footnote-widgets-1',
+			'description'   => 'This is the footnote widgetized area 1.',
+			'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="innerpadding">',
+			'after_widget'  => '</div><div class="clr"></div></div></div>',
+			'before_title'  => '<div class="widget-titlebox"><h3>',
+			'after_title'   => '</h3></div><div class="widget-contentbox">'
+		));
+		register_sidebar(array(
+			'name' => 'Footnote widgets 2',
+			'id'   => 'footnote-widgets-2',
+			'description'   => 'This is the footnote widgetized area 2.',
+			'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="innerpadding">',
+			'after_widget'  => '</div><div class="clr"></div></div></div>',
+			'before_title'  => '<div class="widget-titlebox"><h3>',
+			'after_title'   => '</h3></div><div class="widget-contentbox">'
+		));
+
 
 	}
 }
