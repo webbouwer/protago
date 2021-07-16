@@ -6,8 +6,9 @@
 
 $mainbar_display = get_theme_mod('protago_header_mainbar_display', 'right');
 $mainbar_width = get_theme_mod( 'protago_header_mainbar_width', 'content');
+$mainbar_spaced = get_theme_mod( 'protago_header_mainbar_spaced', 'content');
 
-echo '<div id="mainbar" class="display-'.$mainbar_display.'"><div class="outermargin '.$mainbar_width.'"><div class="innerbar">';
+echo '<div id="mainbar" class="display-'.$mainbar_display.'"><div class="outermargin '.$mainbar_width.' '.$mainbar_spaced.'"><div class="innerbar">';
 // mainbar logo or title
 if ( get_theme_mod( 'protago_logo_image' ) ){
   echo '<div id="site-titlebox"><div class="innerpadding">';

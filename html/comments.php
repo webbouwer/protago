@@ -62,7 +62,7 @@ if ( !empty( $comments ) ) {
             echo '<div class="message">'. $comment->comment_content .'</div>';
             echo '<div class="author">'. $comment->comment_author.'</div>';
             echo '<div class="time">';
-            time_post_public( ( strtotime($comment->comment_date) );
+            time_post_public( strtotime( $comment->comment_date ) );
             echo '</div>';
         echo '</li>';
         //print_r($comment);

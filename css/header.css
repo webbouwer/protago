@@ -1,116 +1,141 @@
 /* protago
-
  * mainmenu.css
-
  */
 
-
-
-/* large screen */
-
-@media all and (min-width: 960px) {
+/* default (mobile) screen */
+#header
+{
+  position:relative;
+  top:0px;
+  width:100%;
+}
+/* header mainbar */
+#mainbar
+{
+  position:relative;
+  width:100%;
+  /*text-align:center;*/
+}
+#mainbar .innerbar
+{
+  display:block;
+}
+#mainbar #mainmenubox #mainmenu nav .innerpadding .menu > ul,
+{
+  display: block;
+}
+#mainbar #mainmenubox #mainmenu nav .innerpadding .menu > ul > li
+{
 }
 
 
+body.large #mainbar .outermargin.content .innerbar,
+body.large #mainbar .outermargin.full .innerbar
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+body.large #mainbar.display-right .innerbar,
+body.large #mainbar.display-inright .innerbar
+{
+  	flex-direction: row-reverse;
+}
+/* inline center (logo in middle of menu) */
+body.large #mainbar .outermargin.center .innerbar,
+body.large #mainbar.display-incenter .outermargin.content .innerbar,
+body.large #mainbar.display-incenter .outermargin.center .innerbar,
+body.large #mainbar.display-incenter .outermargin.full .innerbar
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* center (logo above menu) */
+body.large #mainbar.display-center .outermargin.content .innerbar,
+body.large #mainbar.display-center .outermargin.center .innerbar,
+body.large #mainbar.display-center .outermargin.full .innerbar
+{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 
-  #header
+body.large #mainbar .outermargin.center.spaced
+{
+  width:100% !important;
+}
 
-  {
+body.large #mainbar #mainmenubox #mainmenu nav .innerpadding .menu > ul
+{
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body.large #mainbar.display-right #mainmenubox #mainmenu nav .innerpadding .menu > ul,
+body.large #mainbar.display-inright #mainmenubox #mainmenu nav .innerpadding .menu > ul
+{
+	flex-direction: row-reverse;
+}
+body.large #mainbar #mainmenubox #mainmenu nav .innerpadding .menu > ul > li
+{
+	display: flex;
+	align-items: center;
+}
 
-    position:relative;
 
-    top:0px;
+/* Centered Spaced content (centered menus) */
+body.large #mainbar .outermargin.spaced .innerbar,
+body.large #mainbar .outermargin.spaced .innerbar #mainmenubox,
+body.large #mainbar .outermargin.spaced .innerbar #mainmenubox #mainmenu,
+body.large #mainbar .outermargin.spaced .innerbar #mainmenubox #mainmenu nav,
+body.large #mainbar .outermargin.spaced .innerbar #mainmenubox #mainmenu nav .innerpadding,
+body.large #mainbar .outermargin.spaced .innerbar #mainmenubox #mainmenu nav .innerpadding .menu
 
+{
+    display:block !important;
+    text-align:center;
+}
+body.large #mainbar .outermargin.spaced .innerbar #mainmenubox #mainmenu nav .innerpadding .menu ul
+{
     width:100%;
+    justify-content: space-between;
+}
 
-  }
+body.large #mainbar.display-left .outermargin.spaced .innerbar,
+body.large #mainbar.display-right .outermargin.spaced .innerbar,
+body.large #mainbar.display-inleft .outermargin.spaced .innerbar,
+body.large #mainbar.display-inright .outermargin.spaced .innerbar
+{
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
-
-
-  /* header mainbar */
-
-  #mainbar
-
-  {
-
-    position:relative;
-
-    width:100%;
-
-  }
-
-
-    #mainbar.display-left .innerbar,
-    #mainbar.display-inleft .innerbar
-    {
-      display: flex;
-      justify-content: space-between;
-    }
-    #mainbar.display-right .innerbar,
-    #mainbar.display-inright .innerbar
-    {
-      display: flex;
-    	justify-content: space-between;
-    	flex-direction: row-reverse;
-    }
-    #mainbar.display-incenter .innerbar,
-    #mainbar.display-center .innerbar
-    {
-      display: flex;
-    	flex-direction: column;
-    	justify-content: center;
-    	align-items: center;
-    }
-    #mainbar.mobile .innerbar
-    {
-      display:block;
-    }
-
-    .display-incenter #mainmenubox,
-    .display-center #mainmenubox,
-    .display-center #site-titlebox
-    {
-      flex: 1;
-      text-align: center;
-    }
-
-    #mainbar #mainmenubox #mainmenu nav .innerpadding .menu > ul
-    {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-  		margin: 0;
-  		padding: 0;
-    	list-style: none;
-    }
-
-    #mainbar.display-right #mainmenubox #mainmenu nav .innerpadding .menu > ul,
-    #mainbar.display-inright #mainmenubox #mainmenu nav .innerpadding .menu > ul
-    {
-      display: flex;
-    	flex-direction: row-reverse;
-    }
-  	#mainbar #mainmenubox #mainmenu nav .innerpadding .menu > ul > li
-    {
-  		display: flex;
-    	align-items: center;
-    }
-  	#mainbar #mainmenubox #mainmenu nav .innerpadding .menu > ul > li > a {
-  		padding:10px;
-      display:block;
-  	}
-
-  	#mainbar #mainmenubox #mainmenu nav .innerpadding .menu > ul > li#item-logobox
-  	{
-    	flex: 2;
-    }
-
-
-    #mainbar.mobile #mainmenubox #mainmenu nav .innerpadding .menu > ul
-    {
-      display: block;
-    }
-  	#mainbar.mobile #mainmenubox #mainmenu nav .innerpadding .menu > ul > li
-    {
-    }
+body.large #mainbar.display-right .outermargin.spaced .innerbar,
+body.large #mainbar.display-inright .outermargin.spaced .innerbar
+{
+  	flex-direction: row-reverse;
+}
+body.large #mainbar.display-left .outermargin.spaced #mainmenubox,
+body.large #mainbar.display-right .outermargin.spaced #mainmenubox,
+body.large #mainbar.display-inleft .outermargin.spaced #mainmenubox,
+body.large #mainbar.display-inright .outermargin.spaced #mainmenubox
+{
+  flex: 4 !important;
+  text-align: center;
+}
+body.large #mainbar.display-inleft .outermargin.spaced #mainbar_widgets,
+body.large #mainbar.display-inright .outermargin.spaced #mainbar_widgets,
+body.large #mainbar.display-left .outermargin.spaced #site-titlebox,
+body.large #mainbar.display-right .outermargin.spaced #site-titlebox,
+body.large #mainbar.display-left .outermargin.spaced #site-titlebox,
+body.large #mainbar.display-right .outermargin.spaced #site-titlebox
+{
+  flex: 2 !important;
+  text-align: center;
+}

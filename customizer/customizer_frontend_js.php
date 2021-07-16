@@ -14,7 +14,7 @@ $mobilemaxwidth = get_theme_mod( 'protago_screen_mobile_maxwidth', 640);
 // start output js
 ?>
 <script>
-// Multi event listener
+// Functions
 function listenOnMultiEvents(element, eventNames, listener) {
   var events = eventNames.split(' ');
   for (var i=0, iLen=events.length; i<iLen; i++) {
@@ -58,12 +58,33 @@ function countListElements( listel ){
   }
   return c;
 }
+// check screensize
+function screenSize(){
 
-
-function setDynamicMenu(){
+  var maxw = <?php echo $contentmaxwidth; ?>;
+  var tabminw = <?php echo $tabletmaxwidth; ?>;
 	var mobminw = <?php echo $mobilemaxwidth; ?>;
   var curwinw = document.documentElement.clientWidth;
 
+  // mainbar large / tablet /mobile
+  var screensize = 'large';
+  if( curwinw <= mobminw ){
+    screensize = 'mobile';
+  }else if( curwinw <= tabminw ){
+    screensize = 'tablet';
+  }
+  document.body.classList.remove('mobile');
+  document.body.classList.remove('tablet');
+  document.body.classList.remove('large');
+  document.body.classList.add(screensize);
+  return screensize;
+}
+// adapt elements
+function dynamicElements(){
+
+  var screensize = screenSize();
+
+  // header mainbar
 	var bar = document.getElementById('mainbar');
   var menu = document.getElementById("mainmenu");
   var menulist = menu.getElementsByTagName("ul")[0];
@@ -74,15 +95,8 @@ function setDynamicMenu(){
   var menuaddid = 'item-logobox';
   var widgetaddid = 'item-widgets';
 
-  // mainbar large / small
-  if( curwinw > mobminw ){
-  	bar.classList.remove('mobile');
-  }else{
-  	bar.classList.add('mobile');
-  }
-
-  // mainbar widget placement
-  if( curwinw > mobminw ){
+  // mainbar widget and logobox placement
+  if( screensize == 'large' ){
  		// large screen
     // move widgetbox outside menu
   	if( hasClass( bar, 'display-inright' ) || hasClass( bar, 'display-inleft' ) ){
@@ -98,7 +112,7 @@ function setDynamicMenu(){
 
     }
   }else{
-  	// small screen
+  	// mobile/tablet screen
     // move widgetbox inside menu
   	if( !document.getElementById(widgetaddid) ){
       addItemAtEnd( menulist, widgetbox, widgetaddid );
@@ -106,7 +120,7 @@ function setDynamicMenu(){
   }
 
   // mainbar logobox placement
-  if( curwinw > mobminw ){
+  if( screensize == 'large' ){
  		// large screen
     // move logobox outside menu
     if( ( hasClass( bar, 'display-center' ) || hasClass( bar, 'display-left' ) || hasClass( bar, 'display-right' )) && document.getElementById( menuaddid ) ){
@@ -142,12 +156,30 @@ function setDynamicMenu(){
 
 }
 
-listenOnMultiEvents( window, 'load resize', function(){
-
+listenOnMultiEvents( window, 'DOMContentLoaded resize', function(){
 	// onload and resize
-	setDynamicMenu();
-
+	dynamicElements();
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    var box = document.getElementById('viewcontainer');
+		if (box.classList.contains('loading')) {
+			// show
+			box.classList.add('view-transition');
+			box.clientWidth; // force layout to ensure the now display: block and opacity: 0 values are taken into account when the CSS transition starts.
+			box.classList.remove('loading');
+		} else {
+			// hide
+			box.classList.add('view-transition');
+			box.classList.add('loading');
+		}
+	  box.addEventListener('transitionend', function() {
+		  box.classList.remove('loading-transition');
+	  }, false);
+});
+
+
 </script>
 <?php
 }

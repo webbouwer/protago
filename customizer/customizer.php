@@ -32,16 +32,6 @@ function protago_customizer_global( $wp_customize ){
 		'panel'  => 'protago_global',
 		'priority' => 30,
 	));
-	$wp_customize->add_section('header_image', array(
-      'title'    => __('Header Image', 'protago'),
-      'panel'  => 'protago_global',
-			'priority' => 50,
-	));
-	$wp_customize->add_section('background_image', array(
-      'title'    => __('Background Image', 'protago'),
-      'panel'  => 'protago_global',
-			'priority' => 60,
-	));
 
 	/*
 	$wp_customize->add_section('custom_css', array(
@@ -50,6 +40,7 @@ function protago_customizer_global( $wp_customize ){
 		'priority' => 50,
 	));
 	*/
+
 
 
 }

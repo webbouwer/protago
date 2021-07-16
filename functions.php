@@ -185,8 +185,7 @@ function theme_setup_widgets_init() {
 			'before_title'  => '<div class="widget-titlebox"><h3>',
 			'after_title'   => '</h3></div><div class="widget-contentbox">'
 		));
-
-
+ 
 	}
 }
 add_action( 'widgets_init', 'theme_setup_widgets_init' );

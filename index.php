@@ -6,7 +6,7 @@
 
 get_template_part('html/htmlhead');
 
-echo '<body '; body_class(); echo '>';
+echo '<body '; body_class(); echo '><div id="viewcontainer" class="loading">';
 
 wp_body_open();
 
@@ -18,4 +18,4 @@ get_template_part('html/footer');
 
 wp_footer();
 
-echo '</body></html>';
+echo '</div></body></html>';

@@ -1,44 +1,20 @@
 /* protago
-
  * content.css
-
  */
 
-
-
  /* content */
-
- @media all and (min-width: 1028px) {
-
-   #content .outermargin
-
-   {
-
-     display: flex;
-
-     /*flex-direction: column;
-
-     justify-content: center;
-
-     align-items: center;*/
-
-   }
-
-   #content .outermargin #maincontent
-
-   {
-
-     flex: 3;
-
-   }
-
-   #content .outermargin #sidebar
-
-   {
-
-     flex: 1;
-
-   }
-
- }
-
+body.large #content .outermargin
+{
+  display: flex;
+  /*flex-direction: column;
+  justify-content: center;
+  align-items: center;*/
+}
+body.large #content .outermargin #maincontent
+{
+  flex: 3;
+}
+body.large #content .outermargin #sidebar
+{
+ flex: 1;
+}

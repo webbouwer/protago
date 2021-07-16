@@ -25,6 +25,13 @@ function protago_customizer_header( $wp_customize ){
     ));
 
 
+
+		$wp_customize->add_section('header_image', array(
+	      'title'    => __('Header Image', 'protago'),
+	      'panel'  => 'protago_header',
+				'priority' => 50,
+		));
+
  // header top menu bar style
  $wp_customize->add_setting( 'protago_header_topbar_display' , array(
    'default' => 'hide',
@@ -80,8 +87,8 @@ function protago_customizer_header( $wp_customize ){
            'inleft'    => __( 'inline left - logo and menu inline left, widgets right', 'protago' ),
            'incenter'  => __( 'inline center - logo, menu and widgets inline center, logo centered', 'protago' ),
            'center'  => __( 'center - logo top center, menu and widgets inline center below', 'protago' ),
-           'inright'    => __( 'inline right (rtl) - logo and menu right inline, widgets right', 'protago' ),
-           'right'   => __( 'right (rtl)- logo right, menu and widgets inline left', 'protago' ),
+           'inright'    => __( 'inline right - logo and menu (rtl) right inline, widgets left', 'protago' ),
+           'right'   => __( 'right - logo right, menu (rtl) and widgets inline left', 'protago' ),
        )
   )));
 
@@ -100,6 +107,23 @@ function protago_customizer_header( $wp_customize ){
                'content'  => __( 'Content -  max. content width', 'protago' ),
                'center'    => __( 'Centered - min. content size centered', 'protago' ),
                'full'   => __( 'Full - fullscreen width', 'protago' ),
+    )
+  )));
+
+	$wp_customize->add_setting( 'protago_header_mainbar_spaced' , array(
+     'default' => 'fit',
+     'priority' => 40,
+     'sanitize_callback' => 'protago_sanitize_default',
+  ));
+  $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'protago_header_mainbar_spaced', array(
+    'label'       => __( 'Mainbar spaced', 'protago' ),
+    'section'     => 'protago_mainbar_display',
+    'settings'    => 'protago_header_mainbar_spaced',
+    'description' => __( 'Select mainbar width', 'protago' ),
+    'type'    		=> 'radio',
+    'choices' 		=> array(
+               'spaced'  => __( 'Spaced content -  horizontal strech elements max. content (full) width', 'protago' ),
+               'fit'    => __( 'Fit content - horizontal compact elments min. content sizes', 'protago' )
     )
   )));
 
