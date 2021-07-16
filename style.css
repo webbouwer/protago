@@ -34,6 +34,7 @@ height:100%;
 width:100%;
 }
 
+/*
 #viewcontainer {
 	display: block;
 	opacity: 1;
@@ -42,21 +43,28 @@ width:100%;
 	display: none;
 }
 #viewcontainer.view-transition.loading {
-	display: block; /* ensure box is displayed block during the transition  */
+	display: block;
 	opacity: 0;
 }
 #viewcontainer.view-transition {
 	transition: opacity 0.1s ease;
-}
+} */
 
 /* Theme Default Styles */
+#site-titlebox h1,
+#site-titlebox h2
+{
+	font-size:90%;
+}
+
+/* variable (style.css) */
 .contentmargin,
 .widget .innerpadding,
+.column .innerpadding,
 nav ul > li > a,
-#site-titlebox
+#site-titlebox .innerpadding
 {
-	padding-left:15px;
-	padding-right:15px;
+	padding:0px 5px;
 }
 
 .clr
@@ -67,6 +75,7 @@ line-height:0;
 }
 
 /* WP Default Styles */
+
 .screen-reader-text
 {
 }

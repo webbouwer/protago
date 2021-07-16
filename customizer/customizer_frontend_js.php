@@ -90,34 +90,40 @@ function dynamicElements(){
   var menulist = menu.getElementsByTagName("ul")[0];
 
   var logobox = document.getElementById('site-titlebox');
-  var widgetbox = document.getElementById('mainbar_widgets');
+
+  var widgetbox = '';
+  if( document.getElementById('mainbar_widgets') ){
+    widgetbox = document.getElementById('mainbar_widgets');
+  }
 
   var menuaddid = 'item-logobox';
   var widgetaddid = 'item-widgets';
 
   // mainbar widget and logobox placement
-  if( screensize == 'large' ){
- 		// large screen
-    // move widgetbox outside menu
-  	if( hasClass( bar, 'display-inright' ) || hasClass( bar, 'display-inleft' ) ){
-      bar.getElementsByClassName( 'innerbar' )[0].append(widgetbox);
-      if(document.getElementById(widgetaddid)){
-        removeItem( menulist, widgetaddid );
+  if( widgetbox !== '' ){
+    if( screensize == 'large' ){
+   		// large screen
+      // move widgetbox outside menu
+    	if( hasClass( bar, 'display-inright' ) || hasClass( bar, 'display-inleft' ) ){
+        bar.getElementsByClassName( 'innerbar' )[0].append(widgetbox);
+        if(document.getElementById(widgetaddid)){
+          removeItem( menulist, widgetaddid );
+        }
+      }else{
+      	// move widgetbox inside menu
+        if( !document.getElementById(widgetaddid) ){
+          addItemAtEnd( menulist, widgetbox, widgetaddid );
+        }
+
       }
     }else{
-    	// move widgetbox inside menu
-      if( !document.getElementById(widgetaddid) ){
+    	// mobile/tablet screen
+      // move widgetbox inside menu
+    	if( !document.getElementById(widgetaddid) ){
         addItemAtEnd( menulist, widgetbox, widgetaddid );
       }
-
     }
-  }else{
-  	// mobile/tablet screen
-    // move widgetbox inside menu
-  	if( !document.getElementById(widgetaddid) ){
-      addItemAtEnd( menulist, widgetbox, widgetaddid );
-    }
-  }
+}
 
   // mainbar logobox placement
   if( screensize == 'large' ){
@@ -155,29 +161,33 @@ function dynamicElements(){
   }
 
 }
+// experimental __
+function triggerLoading( elementid ) {
+
+    if( document.getElementById(elementid) ){
+      var box = document.getElementById(elementid);
+  		if (box.classList.contains('loading')) {
+  			// show
+  			box.classList.add('view-transition');
+  			box.clientWidth; // force layout to ensure the now display: block and opacity: 0 values are taken into account when the CSS transition starts.
+  			box.classList.remove('loading');
+  		} else {
+  			// hide
+  			box.classList.add('view-transition');
+  			box.classList.add('loading');
+  		}
+  	  box.addEventListener('transitionend', function() {
+  		  box.classList.remove('loading-transition');
+  	  }, false);
+    }
+
+}
 
 listenOnMultiEvents( window, 'DOMContentLoaded resize', function(){
 	// onload and resize
 	dynamicElements();
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-
-    var box = document.getElementById('viewcontainer');
-		if (box.classList.contains('loading')) {
-			// show
-			box.classList.add('view-transition');
-			box.clientWidth; // force layout to ensure the now display: block and opacity: 0 values are taken into account when the CSS transition starts.
-			box.classList.remove('loading');
-		} else {
-			// hide
-			box.classList.add('view-transition');
-			box.classList.add('loading');
-		}
-	  box.addEventListener('transitionend', function() {
-		  box.classList.remove('loading-transition');
-	  }, false);
-});
 
 
 </script>
