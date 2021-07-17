@@ -20,17 +20,17 @@ if( $bottombar_display != 'hide'){
     echo '<div id="bottombar_widgets_1" class="column"><div class="widgetpadding">';
       dynamic_sidebar('bottombar-widgets-1');
     echo '<div class="clr"></div></div></div>';
-    //if ( has_nav_menu( 'footermenu' ) ){
+    if ( has_nav_menu( 'footermenu' ) ){
       echo '<div id="footermenubox" class="column"><div id="footermenu" class="pos-default"><nav><div class="innerpadding">';
         wp_nav_menu( array( 'theme_location' => 'footermenu' ) );
        echo '<div class="clr"></div></div></nav></div></div>';
-     //}
+     }
   }else{
-    //if ( has_nav_menu( 'footermenu' ) ){
+    if ( has_nav_menu( 'footermenu' ) ){
        echo '<div id="footermenubox" class="column"><div id="footermenu" class="pos-default"><nav><div class="innerpadding">';
          wp_nav_menu( array( 'theme_location' => 'footermenu' ) );
        echo '<div class="clr"></div></div></nav></div></div>';
-    //}
+    }
     if( function_exists('is_sidebar_active') && is_sidebar_active('bottombar-widgets-1') ){
        echo '<div id="bottombar_widgets_1" class="column"><div class="widgetpadding">';
          dynamic_sidebar('bottombar-widgets-1');

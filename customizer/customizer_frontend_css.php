@@ -53,18 +53,40 @@
    background-color:yellow;
  }
 
+ /* topbar */
  #header > .outermargin #topbar
  {
    background-color:#2d2d2d;
+   color:ededed;
  }
 
- #header > .outermargin #mainbar
+
+/* bottombar (footer.css)*/
+body.large #topbar #topmenubox #topmenu  nav .innerpadding .menu > ul > li > a,
+body.large #topbar #topbar_widgets_1 > div,
+body.large #topbar #topbar_widgets_2 > div
+{
+   /* bar menu height */
+    min-height:30px;
+    /* align button text */
+    align-items: center; /* baseline, flex-end */
+    justify-content:flex-start; /* space-around,center */
+    background-color: #2d2d2d;
+}
+
+ body.large #topbar #topmenubox #topmenu  nav .innerpadding .menu > ul > li > a:hover
  {
-   background-color:black;
+   background-color: black;
+   color:white;
  }
-
 
  /* mainbar background-color, height and menu content alignment (header.css)*/
+  #header > .outermargin #mainbar
+  {
+    background-color:black;
+  }
+
+
  body.large #mainbar #mainmenubox #mainmenu nav .innerpadding .menu > ul > li > a:not(#site-logo),
  body.large #mainbar:not(.display-center) .innerbar > #site-titlebox > div,
  body.large #mainbar .innerbar > #mainbar_widgets > div,
@@ -72,7 +94,7 @@
  body.large #mainbar #mainmenubox #mainmenu nav .innerpadding .menu > ul > li#item-widgets > div
  {
     /* bar menu height */
-     min-height:80px;
+     min-height:120px;
      /* align button text */
      justify-content:center;
      background-color: black;
@@ -84,6 +106,56 @@
    background-color: #2d2d2d;
    color:white;
  }
+
+
+ /* widgetbar */
+ #footer_widgets
+ {
+   background-color:black;
+   color:white;
+ }
+/* widgetbar (footer.css)*/
+body.large #footer_widgets .outermargin .widgetcolumn > div
+{
+   /* bar menu height */
+    min-height:90px;
+    /* align button text */
+    align-items: baseline;  /* center, flex-end */
+    justify-content: flex-start; /* center */
+    background-color: black;
+}
+
+
+/* bottombar */
+#bottombar
+{
+  background-color:black;
+  color:white;
+}
+/* bottombar (footer.css)*/
+body.large #bottombar #footermenubox #footermenu  nav .innerpadding .menu > ul > li > a,
+body.large #bottombar #bottombar_widgets_1 > div,
+body.large #bottombar #bottombar_widgets_2 > div
+{
+   /* bar menu height */
+    min-height:90px;
+    /* align button text */
+    align-items: center; /* baseline, flex-end */
+    justify-content: flex-start; /* space-around, center */
+    background-color: black;
+}
+body.large #bottombar #footermenubox #footermenu  nav .innerpadding .menu > ul > li > a:hover
+{
+  background-color: #2d2d2d;
+  color:white;
+}
+
+/* footnote bar */
+#footnote
+{
+  background-color:#2d2d2d;
+  color:white;
+}
 
  </style>
  <?php

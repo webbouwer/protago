@@ -29,9 +29,86 @@
 }
 
 
+/* topbar */
+body.large #topbar .outermargin
+{
+  display: flex !important;
+  flex-direction: row;
+}
+body.large #topbar.display-right .outermargin
+{
+  flex-direction: row-reverse;
+}
+body.large #topbar.display-center .outermargin
+{
+}
+
+body.large #topbar .outermargin .column
+{
+  flex:1;
+  text-align: left;
+}
+
+body.large #topbar .outermargin.center
+{
+  justify-content: center;
+}
+body.large #topbar .outermargin.center .column
+{
+  flex:0 0 auto;
+}
+
+body.large #topbar .outermargin #topmenubox,
+body.large #topbar .outermargin #topmenubox #topmenu,
+body.large #topbar .outermargin #topmenubox #topmenu nav,
+body.large #topbar .outermargin #topmenubox #topmenu nav .innerpadding,
+body.large #topbar .outermargin #topmenubox #topmenu nav .innerpadding .menu
+{
+  display:flex;
+}
+body.large #topmenubox #topmenu nav .innerpadding .menu > ul
+{
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body.large #topmenubox #topmenu nav .innerpadding .menu > ul > li
+{
+  flex-shrink: 0;
+}
+body.large #topmenubox #topmenu nav .innerpadding .menu > ul > li > a
+{
+  display:flex;
+  height:100%;
+}
+/* bottombar (footer.css)*/
+body.large #topbar #topbar_widgets_1 > div,
+body.large #topbar #topbar_widgets_2 > div
+{
+    display:flex;
+    align-items:center;
+    width:100%;
+    height:100%;
+}
+body.large #topbar #topmenubox #topmenu  nav .innerpadding .menu > ul > li > a,
+body.large #topbar #topbar_widgets_1 > div,
+body.large #topbar #topbar_widgets_2 > div
+{
+   /* bar menu height */
+    min-height:30px;
+    /* align button text */
+    align-items: center; /* baseline, flex-end */
+    justify-content:space-around;
+    background-color: red;
+}
 
 
 
+
+
+/* mainbar */
 body.large #mainbar .outermargin.content .innerbar,
 body.large #mainbar .outermargin.full .innerbar
 {
@@ -140,10 +217,12 @@ body.large #mainbar.display-right .outermargin.spaced #site-titlebox
 /* menu items */
 body.large #mainbar #mainmenubox #mainmenu nav .innerpadding .menu > ul > li
 {
-  flex: 1;
+  /*flex: 1;*/
+  flex-shrink: 0;
 }
 body.large #mainbar #mainmenubox #mainmenu nav .innerpadding .menu > ul > li#item-logobox
 {
+  /*flex: 1;*/
   flex-shrink: 0;
 }
 

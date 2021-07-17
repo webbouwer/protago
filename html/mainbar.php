@@ -6,7 +6,7 @@
 
 $mainbar_display = get_theme_mod('protago_header_mainbar_display', 'right');
 $mainbar_width = get_theme_mod( 'protago_header_mainbar_width', 'content');
-$mainbar_spaced = get_theme_mod( 'protago_header_mainbar_spaced', 'content');
+$mainbar_spaced = get_theme_mod( 'protago_header_mainbar_spaced', 'fit');
 
 echo '<div id="mainbar" class="display-'.$mainbar_display.'"><div class="outermargin '.$mainbar_width.' '.$mainbar_spaced.'"><div class="innerbar">';
 // mainbar logo or title

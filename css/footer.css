@@ -10,16 +10,20 @@ body.large #footer_widgets .outermargin
 }
 body.large #footer_widgets .outermargin.center
 {
-  display: flex;
+  display: flex !important;
   justify-content: center;
 	align-items: center;
 }
+
 body.large #footer_widgets .outermargin .widgetcolumn
 {
   flex:1;
+  text-align:left;
 }
-body.large #footer_widgets.display-equal
+
+body.large #footer_widgets.display-equal .outermargin .widgetcolumn
 {
+  flex:1;
 }
 body.large #footer_widgets.display-wid1 .outermargin .widgetcolumn:nth-child(1),
 body.large #footer_widgets.display-wid2 .outermargin .widgetcolumn:nth-child(2),
@@ -29,45 +33,107 @@ body.large #footer_widgets.display-wid5 .outermargin .widgetcolumn:nth-child(5)
 {
   flex:2;
 }
-body.large #footer_widgets .outermargin.center .widgetcolumn
+
+/* widgetbar (footer.css)*/
+body.large #footer_widgets .outermargin .widgetcolumn > div
 {
-  flex:none;
+    display:flex;
+    align-items:center;
+    width:100%;
+    height:100%;
+
+}
+body.large #footer_widgets .outermargin .widgetcolumn > div
+{
+   /* bar menu height */
+    min-height:500px;
+    /* align button text */
+    align-items: center; /* baseline, flex-end */
+    justify-content:space-around;
+    background-color: red;
 }
 
+
+
+
 /* bottombar */
-body.large #bottombar.display-left .outermargin
+body.large #bottombar .outermargin
 {
-  display: flex;
+  display: flex !important;
   flex-direction: row;
 }
 body.large #bottombar.display-right .outermargin
 {
-  display: flex;
   flex-direction: row-reverse;
 }
-body.large #bottombar.display-center .outermargin,
-body.large #bottombar.display-left .outermargin.center,
-body.large #bottombar.display-right .outermargin.center
+body.large #bottombar.display-center .outermargin
 {
-  display: flex;
-  justify-content: center;
-	align-items: center;
 }
-body.large #bottombar.display-left .column,
-body.large #bottombar.display-right .column,
-body.large #bottombar.display-center .column
+
+body.large #bottombar .outermargin .column
 {
   flex:1;
+  text-align: left;
 }
-body.large #bottombar.display-center .outermargin .column,
-body.large #bottombar.display-left .outermargin.center .column,
-body.large #bottombar.display-right .outermargin.center .column
+
+body.large #bottombar .outermargin.center
 {
-  flex:none;
+  justify-content: center;
+}
+body.large #bottombar .outermargin.center .column
+{
+  flex:0 0 auto;
+}
+
+body.large #bottombar .outermargin #footermenubox,
+body.large #bottombar .outermargin #footermenubox #footermenu,
+body.large #bottombar .outermargin #footermenubox #footermenu nav,
+body.large #bottombar .outermargin #footermenubox #footermenu nav .innerpadding,
+body.large #bottombar .outermargin #footermenubox #footermenu nav .innerpadding .menu
+{
+  display:flex;
+}
+
+
+
+
+body.large #footermenubox #footermenu nav .innerpadding .menu > ul
+{
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 body.large #footermenubox #footermenu nav .innerpadding .menu > ul > li
 {
-  display:inline-block;
+  flex-shrink: 0;
+}
+body.large #footermenubox #footermenu nav .innerpadding .menu > ul > li > a
+{
+  display:flex;
+  height:100%;
+}
+
+/* bottombar (footer.css)*/
+body.large #bottombar #bottombar_widgets_1 > div,
+body.large #bottombar #bottombar_widgets_2 > div
+{
+    display:flex;
+    align-items:center;
+    width:100%;
+    height:100%;
+}
+body.large #bottombar #footermenubox #footermenu  nav .innerpadding .menu > ul > li > a,
+body.large #bottombar #bottombar_widgets_1 > div,
+body.large #bottombar #bottombar_widgets_2 > div
+{
+   /* bar menu height */
+    min-height:50px;
+    /* align button text */
+    align-items: center; /* baseline, flex-end */
+    justify-content:space-around;
+    background-color: red; 
 }
 
 /* footnote */
@@ -85,7 +151,7 @@ body.large #footnote.display-center .outermargin,
 body.large #footnote.display-left .outermargin.center,
 body.large #footnote.display-right .outermargin.center
 {
-  display: flex;
+  display: flex !important;
   justify-content: center;
 	align-items: center;
 }

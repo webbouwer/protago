@@ -80,7 +80,7 @@ function screenSize(){
   return screensize;
 }
 // adapt elements
-function dynamicElements(){
+function dynamicMainbar(){
 
   var screensize = screenSize();
 
@@ -161,7 +161,7 @@ function dynamicElements(){
   }
 
 }
-// experimental __
+/* experimental __
 function triggerLoading( elementid ) {
 
     if( document.getElementById(elementid) ){
@@ -181,11 +181,21 @@ function triggerLoading( elementid ) {
   	  }, false);
     }
 
+}*/
+
+/**/
+function setBottombar() {
+  if( document.getElementById('footer') ){
+    var h = document.getElementById('footer').offsetHeight;
+    document.getElementById('viewcontainer').style.paddingBottom  = h;
+  }
+  console.log(h);
 }
 
 listenOnMultiEvents( window, 'DOMContentLoaded resize', function(){
 	// onload and resize
-	dynamicElements();
+	dynamicMainbar();
+  setBottombar();
 });
 
 

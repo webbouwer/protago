@@ -107,6 +107,8 @@ function protago_customizer_footer( $wp_customize ){
  				)
  	)));
 
+
+
  	// footnotes bar style
  	$wp_customize->add_setting( 'protago_footer_footnote_display' , array(
  		'default' => 'hide',
@@ -144,6 +146,8 @@ function protago_customizer_footer( $wp_customize ){
  				)
  	)));
 
+
+
  	$wp_customize->add_setting( 'protago_footer_footnote_copyrighttext' , array(
  		'default' => 'Copyright 2021',
  		'sanitize_callback' => 'onepiece_sanitize_default',
@@ -156,5 +160,7 @@ function protago_customizer_footer( $wp_customize ){
              	'type'           => 'textarea',
   	    	'description'    => __( 'Copyright information text.', 'protago' ),
   )));
+
+
 }
 add_action( 'customize_register', 'protago_customizer_footer' );
