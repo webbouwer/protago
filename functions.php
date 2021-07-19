@@ -3,15 +3,8 @@
  * functions.php
  */
 
-require get_template_directory() . '/customizer/customizer.php'; // customizer global functions
-require get_template_directory() . '/customizer/customizer_identity.php'; // customizer identity functions
-require get_template_directory() . '/customizer/customizer_screen.php'; // customizer screen functions
-require get_template_directory() . '/customizer/customizer_style.php'; // customizer style functions
-require get_template_directory() . '/customizer/customizer_header.php'; // customizer header functions
-require get_template_directory() . '/customizer/customizer_content.php'; // customizer content functions
-require get_template_directory() . '/customizer/customizer_footer.php'; // customizer footer functions
-require get_template_directory() . '/customizer/customizer_frontend_css.php'; // customizer css frontend
-require get_template_directory() . '/customizer/customizer_frontend_js.php'; // customizer javascript frontend
+require get_template_directory() . '/customizer.php'; // customizer global functions
+require get_template_directory() . '/assets/category_and_tags.php';
 
 /********* Wordpress Hooks & filters *********/
 
@@ -78,13 +71,22 @@ function theme_setup_widgets_init() {
 		));
 
 
-		// the mainbar side widget
+		// the mainbar side widgets
 		register_sidebar(array(
-			'name' => 'Mainbar widgets',
-			'id'   => 'mainbar-widgets',
+			'name' => 'Mainbar widgets 1',
+			'id'   => 'mainbar-widgets-1',
 			'description'   => 'This is the mainbar widgetized area.',
 			'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="innerpadding">',
-			'after_widget'  => '</div><div class="clr"></div></div></div>',
+			'after_widget'  => '</div></div></div>',
+			'before_title'  => '<div class="widget-titlebox"><h3>',
+			'after_title'   => '</h3></div><div class="widget-contentbox">'
+		));
+		register_sidebar(array(
+			'name' => 'Mainbar widgets 2',
+			'id'   => 'mainbar-widgets-2',
+			'description'   => 'This is the mainbar widgetized area.',
+			'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="innerpadding">',
+			'after_widget'  => '</div></div></div>',
 			'before_title'  => '<div class="widget-titlebox"><h3>',
 			'after_title'   => '</h3></div><div class="widget-contentbox">'
 		));
@@ -95,7 +97,7 @@ function theme_setup_widgets_init() {
 			'id'   => 'sidebar',
 			'description'   => 'This is a standard wordpress sidebar widgetized area.',
 			'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="innerpadding">',
-			'after_widget'  => '</div><div class="clr"></div></div></div>',
+			'after_widget'  => '</div></div></div>',
 			'before_title'  => '<div class="widget-titlebox"><h3>',
 			'after_title'   => '</h3></div><div class="widget-contentbox">'
 		));
@@ -105,7 +107,7 @@ function theme_setup_widgets_init() {
 			'id'   => 'widgets-footer-1',
 			'description'   => 'Footer widgets in column 1.',
 			'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="innerpadding">',
-			'after_widget'  => '</div><div class="clr"></div></div></div>',
+			'after_widget'  => '</div></div></div>',
 			'before_title'  => '<div class="widget-titlebox"><h3>',
 			'after_title'   => '</h3></div><div class="widget-contentbox">'
 		));
@@ -114,7 +116,7 @@ function theme_setup_widgets_init() {
 			'id'   => 'widgets-footer-2',
 			'description'   => 'Footer widgets in column 2.',
 			'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="innerpadding">',
-			'after_widget'  => '</div><div class="clr"></div></div></div>',
+			'after_widget'  => '</div></div></div>',
 			'before_title'  => '<div class="widget-titlebox"><h3>',
 			'after_title'   => '</h3></div><div class="widget-contentbox">'
 		));
@@ -123,7 +125,7 @@ function theme_setup_widgets_init() {
 			'id'   => 'widgets-footer-3',
 			'description'   => 'Footer widgets in column 3.',
 			'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="innerpadding">',
-			'after_widget'  => '</div><div class="clr"></div></div></div>',
+			'after_widget'  => '</div></div></div>',
 			'before_title'  => '<div class="widget-titlebox"><h3>',
 			'after_title'   => '</h3></div><div class="widget-contentbox">'
 		));
@@ -132,7 +134,7 @@ function theme_setup_widgets_init() {
 			'id'   => 'widgets-footer-4',
 			'description'   => 'Footer widgets in column 4.',
 			'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="innerpadding">',
-			'after_widget'  => '</div><div class="clr"></div></div></div>',
+			'after_widget'  => '</div></div></div>',
 			'before_title'  => '<div class="widget-titlebox"><h3>',
 			'after_title'   => '</h3></div><div class="widget-contentbox">'
 		));
@@ -141,7 +143,7 @@ function theme_setup_widgets_init() {
 			'id'   => 'widgets-footer-5',
 			'description'   => 'Footer widgets in column 5.',
 			'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="innerpadding">',
-			'after_widget'  => '</div><div class="clr"></div></div></div>',
+			'after_widget'  => '</div></div></div>',
 			'before_title'  => '<div class="widget-titlebox"><h3>',
 			'after_title'   => '</h3></div><div class="widget-contentbox">'
 		));
@@ -152,7 +154,7 @@ function theme_setup_widgets_init() {
 			'id'   => 'bottombar-widgets-1',
 			'description'   => 'This is the bottombar widgetized area 1.',
 			'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="innerpadding">',
-			'after_widget'  => '</div><div class="clr"></div></div></div>',
+			'after_widget'  => '</div></div></div>',
 			'before_title'  => '<div class="widget-titlebox"><h3>',
 			'after_title'   => '</h3></div><div class="widget-contentbox">'
 		));
@@ -161,7 +163,7 @@ function theme_setup_widgets_init() {
 			'id'   => 'bottombar-widgets-2',
 			'description'   => 'This is the bottombar widgetized area 2.',
 			'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="innerpadding">',
-			'after_widget'  => '</div><div class="clr"></div></div></div>',
+			'after_widget'  => '</div></div></div>',
 			'before_title'  => '<div class="widget-titlebox"><h3>',
 			'after_title'   => '</h3></div><div class="widget-contentbox">'
 		));
@@ -172,7 +174,7 @@ function theme_setup_widgets_init() {
 			'id'   => 'footnote-widgets-1',
 			'description'   => 'This is the footnote widgetized area 1.',
 			'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="innerpadding">',
-			'after_widget'  => '</div><div class="clr"></div></div></div>',
+			'after_widget'  => '</div></div></div>',
 			'before_title'  => '<div class="widget-titlebox"><h3>',
 			'after_title'   => '</h3></div><div class="widget-contentbox">'
 		));
@@ -181,15 +183,17 @@ function theme_setup_widgets_init() {
 			'id'   => 'footnote-widgets-2',
 			'description'   => 'This is the footnote widgetized area 2.',
 			'before_widget' => '<div id="%1$s" class="widget %2$s"><div class="innerpadding">',
-			'after_widget'  => '</div><div class="clr"></div></div></div>',
+			'after_widget'  => '</div></div></div>',
 			'before_title'  => '<div class="widget-titlebox"><h3>',
 			'after_title'   => '</h3></div><div class="widget-contentbox">'
 		));
- 
+
 	}
 }
 add_action( 'widgets_init', 'theme_setup_widgets_init' );
 
+/********* Theme Content Exension Functions *********/
+// see child theme artificium
 /********* Theme Custom Functions *********/
 
 // https://www.isitwp.com/display-theme-information-with-get_theme_data/

@@ -3,10 +3,9 @@
  * index.php
  * default theme file
  */
-
 get_template_part('html/htmlhead');
 
-echo '<body '; body_class(); echo '><div id="viewcontainer" class="loading">';
+echo '<body '; body_class(); echo '><div id="viewcontainer">';
 
 wp_body_open();
 

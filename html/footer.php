@@ -1,13 +1,41 @@
-
 <?php
-/* protago
- * footer.php
- */
 
-echo '<div id="footer">';
 
-get_template_part('html/bottomwidgets');
 
-get_template_part('html/bottombar');
+// bottombar menu
+if ( has_nav_menu( 'footermenu' ) ){
+   echo '<div id="footermenubox" class="column"><div id="footermenu" class="pos-default"><nav><div class="innerpadding">';
+     wp_nav_menu( array( 'theme_location' => 'footermenu' ) );
+   echo '<div class="clr"></div></div></nav></div></div>';
+}
 
-echo '<div class="clr"></div></div>';
+// bottombar widgets
+if( function_exists('is_sidebar_active') && is_sidebar_active('bottombar-widgets-1') ){
+   echo '<div id="bottombar_widgets_1" class="column"><div class="widgetpadding">';
+     dynamic_sidebar('bottombar-widgets-1');
+   echo '<div class="clr"></div></div></div>';
+}
+if( function_exists('is_sidebar_active') && is_sidebar_active('bottombar-widgets-2') ){
+   echo '<div id="bottombar_widgets_2" class="column"><div class="widgetpadding">';
+     dynamic_sidebar('bottombar-widgets-2');
+   echo '<div class="clr"></div></div></div>';
+}
+
+
+// footnote_display
+$footnote_copyright_text = get_theme_mod( 'protago_footer_footnote_copyrighttext', 'Copyright 2021');
+
+echo '<div id="footnote_copyright" class="column"><div class="innerpadding">';
+echo $footnote_copyright_text;
+echo '</div></div>';
+
+if( function_exists('is_sidebar_active') && is_sidebar_active('footnote-widgets-1') ){
+  echo '<div id="footnote_widgets_1" class="column">';
+    dynamic_sidebar('footnote-widgets-1');
+  echo '</div>';
+}
+if( function_exists('is_sidebar_active') && is_sidebar_active('footnote-widgets-2') ){
+  echo '<div id="footnote_widgets_2" class="column">';
+    dynamic_sidebar('footnote-widgets-2');
+  echo '</div>';
+}
