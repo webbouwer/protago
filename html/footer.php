@@ -1,7 +1,6 @@
 <?php
 
 
-
 // bottombar menu
 if ( has_nav_menu( 'footermenu' ) ){
    echo '<div id="footermenubox" class="column"><div id="footermenu" class="pos-default"><nav><div class="innerpadding">';

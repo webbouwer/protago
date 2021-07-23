@@ -37,42 +37,29 @@ width:100%;
 body {
 
 }
-/*
-#viewcontainer {
-	display: block;
-	opacity: 1;
-}
-#viewcontainer.loading {
-	display: none;
-}
-#viewcontainer.view-transition.loading {
-	display: block;
-	opacity: 0;
-}
-#viewcontainer.view-transition {
-	transition: opacity 0.1s ease;
-} */
 
 #viewcontainer
 {
-
- position:relative;
- min-height:100%;
- width:100%;
 }
+
+#header
+{
+}
+
 #footer
 {
-	position:absolute;
-  width:100%;
-	bottom:0px;
 }
 
 /* Theme Default Styles */
-#site-titlebox h1,
-#site-titlebox h2
+
+
+#logobox h1,
+#logobox h2
 {
 	font-size:90%;
 }
+
+
 
 /* variable (style.css) */
 .contentmargin,
@@ -89,6 +76,11 @@ nav ul > li > a,
 clear:both;
 height:0;
 line-height:0;
+}
+
+/* Header */
+#header
+{
 }
 
 /* WP Default Styles */

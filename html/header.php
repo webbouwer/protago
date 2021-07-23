@@ -1,17 +1,23 @@
 <?php
 
+$mainbar_display = get_theme_mod('protago_header_mainbar_display', 'right');
+$mainbar_width = get_theme_mod( 'protago_header_mainbar_width', 'content');
+$mainbar_spaced = get_theme_mod( 'protago_header_mainbar_spaced', 'fit');
 
+echo '<div id="header">';
+
+echo '<div id="mainbar" class="display-'.$mainbar_display.' '.$mainbar_spaced.'"><div class="outermargin '.$mainbar_width.'">';
 
 // mainbar logo
 if ( get_theme_mod( 'protago_logo_image' ) ){
-  echo '<div id="site-titlebox"><div class="innerpadding">';
+  echo '<div id="logobox"><div class="innerpadding">';
   echo '<a href="'.esc_url( home_url( '/' ) ).'" class="site-logo" ';
   echo 'title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" ';
   echo 'rel="home"><img src="'.get_theme_mod( 'protago_logo_image' ).'" ';
   echo 'alt="'.esc_attr( get_bloginfo( 'name', 'display' ) ).' - '.get_bloginfo( 'description' ).'"></a>';
   echo '</div></div>';
 }else{
-  echo '<div id="site-titlebox"><div class="innerpadding"><hgroup><h1 class="site-title">';
+  echo '<div id="logobox"><div class="innerpadding"><hgroup><h1 class="site-title">';
   echo '<a href="'.esc_url( home_url( '/' ) ).'" id="site-logo" ';
   echo 'title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" ';
   echo 'rel="home">'.esc_attr( get_bloginfo( 'name', 'display' ) ).'</a>';
@@ -36,3 +42,5 @@ if( function_exists('is_sidebar_active') && is_sidebar_active('mainbar-widgets-2
     dynamic_sidebar('mainbar-widgets-2');
   echo '</div>';
 }
+
+echo '</div></div></div>';

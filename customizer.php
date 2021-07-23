@@ -8,8 +8,8 @@ function protago_sanitize_default($obj){
     return $obj;     // todo .. empty sanitizer
 }
 
-// customizer global
-function protago_customizer_global( $wp_customize ){
+// customizer
+function protago_customizer_init( $wp_customize ){
 
 	// REMOVE some core theme settings first
 	$wp_customize->remove_control('display_header_text');
@@ -26,55 +26,35 @@ function protago_customizer_global( $wp_customize ){
     'priority' => 10,
   ));
 
-
+  // global panel
 	$wp_customize->add_section('static_front_page', array(
 		'title'    => __('Frontpage Type', 'protago'),
 		'panel'  => 'protago_global',
 		'priority' => 30,
 	));
 
-  // footer panel
-  $wp_customize->add_panel('protago_footer', array(
-    'title'    => __('Footer', 'protago'),
-    'priority' => 20,
+  // identity panel
+  $wp_customize->add_section('title_tagline', array(
+    'title'    => __('Identity', 'protago'),
+    'panel'  => 'protago_global',
+    'priority' => 10,
   ));
 
 
+  // identity options
 
-  $wp_customize->add_section('protago_widgetbar_display', array(
-  	'title'    => __('Widgetsbar', 'protago'),
-  	'panel'  => 'protago_footer',
-  	'priority' => 30,
-  ));
-
-  $wp_customize->add_section('protago_bottombar_display', array(
-  	'title'    => __('Bottombar', 'protago'),
-  	'panel'  => 'protago_footer',
-  	'priority' => 40,
-  ));
-
-  $wp_customize->add_section('protago_footnotes_display', array(
-  	 'title'    => __('Footnotes', 'protago'),
-  	 'panel'  => 'protago_footer',
-  	'priority' => 50,
-  ));
-
-
-   	$wp_customize->add_setting( 'protago_footer_footnote_copyrighttext' , array(
-   		'default' => 'Copyright 2021',
-   		'sanitize_callback' => 'onepiece_sanitize_default',
-    ));
-
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'protago_footer_footnote_copyrighttext', array(
-               	'label'          => __( 'Copyright text', 'onepiece' ),
-               	'section'        => 'protago_footnotes_display',
-               	'settings'       => 'protago_footer_footnote_copyrighttext',
-               	'type'           => 'textarea',
-    	    	'description'    => __( 'Copyright information text.', 'protago' ),
-    )));
-
-
+ 	// logo image
+ 	$wp_customize->add_setting( 'protago_logo_image', array(
+ 		'sanitize_callback' => 'protago_sanitize_default',
+ 	  'priority' => 30,
+ 	));
+ 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'imagazine_topbar_logo_image', array(
+ 		'label'    => __( 'Logo image', 'protago' ),
+ 		'section'  => 'title_tagline',
+ 		'settings' => 'protago_logo_image',
+ 		'description' => __( 'Upload or select a logo image', 'protago' ),
+ 	) ) );
 
 
 }
-add_action( 'customize_register', 'protago_customizer_global' );
+add_action( 'customize_register', 'protago_customizer_init' );

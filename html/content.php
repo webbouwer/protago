@@ -17,12 +17,17 @@ if ( have_posts() ) :
       edit_post_link( __( 'Edit' , 'protago' ), '<span class="edit-link">', '</span>' );
     }
 
-    echo '<h1><a href="'.get_the_permalink().'">'.get_the_title().'</a></h1>';
-
     // post meta
     // time_post_public
 
     if( is_single() || is_page() ){
+      
+        if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+						the_post_thumbnail( 'full' );
+				}
+
+        echo '<h1><a href="'.get_the_permalink().'">'.get_the_title().'</a></h1>';
+
 
         echo apply_filters('the_content', get_the_content());
 
@@ -31,7 +36,10 @@ if ( have_posts() ) :
         }
 
     }else{
-
+        if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+            the_post_thumbnail( 'thumb' );
+        }
+        echo '<h1><a href="'.get_the_permalink().'">'.get_the_title().'</a></h1>';
         echo apply_filters('the_excerpt', get_the_excerpt()); // the_excerpt_length( 32 );
 
     }
