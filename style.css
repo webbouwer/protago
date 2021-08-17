@@ -13,6 +13,12 @@ Tags: accessibility-ready
 Text Domain: Protago
 */
 
+/* Notes:
+
+- check for clean theme code https://www.advicelocal.com/blog/using-wordpress-custom-post-type-templates-in-a-plugin/
+*/
+
+
 
 @import "css/header.css";
 @import "css/content.css";
