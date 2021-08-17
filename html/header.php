@@ -6,6 +6,8 @@ $mainbar_spaced = get_theme_mod( 'protago_header_mainbar_spaced', 'fit');
 
 echo '<div id="header">';
 
+if( $mainbar_display != 'hide' ){
+
 echo '<div id="mainbar" class="display-'.$mainbar_display.' '.$mainbar_spaced.'"><div class="outermargin '.$mainbar_width.'">';
 
 // mainbar logo
@@ -43,4 +45,7 @@ if( function_exists('is_sidebar_active') && is_sidebar_active('mainbar-widgets-2
   echo '</div>';
 }
 
-echo '</div></div></div>';
+echo '</div></div>';
+}
+
+echo '</div>';

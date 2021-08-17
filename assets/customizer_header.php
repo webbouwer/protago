@@ -45,6 +45,7 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'protago_he
           'incenter'  => __( 'inline center - logo, menu and widgets inline center, logo centered', 'protago' ),
           'inright'    => __( 'inline right - logo and menu (rtl) right inline, widgets left', 'protago' ),
           'right'   => __( 'right - logo right, menu (rtl) and widgets inline left', 'protago' ),
+          'hide'   => __( 'hide - no display', 'protago' ),
       )
   )));
 
@@ -56,7 +57,7 @@ $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'protago_he
              'sanitize_callback' => 'protago_sanitize_default',
     ));
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'protago_header_mainbar_width', array(
-            'label'       => __( 'Mainbar width', 'protago' ),
+            'label'       => __( 'Mainbar display', 'protago' ),
             'section'     => 'protago_mainbar_display',
             'settings'    => 'protago_header_mainbar_width',
             'description' => __( 'Select mainbar width', 'protago' ),

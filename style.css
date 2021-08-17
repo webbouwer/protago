@@ -1,5 +1,5 @@
 /*
-Theme Name: protago
+Theme Name: Protago
 Theme URI: https://github.com/webbouwer/protago
 Author: Webbouwer
 Author URI: http://www.webdesigndenhaag.net
@@ -10,7 +10,7 @@ Requires PHP: 7.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: accessibility-ready
-Text Domain: protago
+Text Domain: Protago
 */
 
 
@@ -66,7 +66,7 @@ body {
 .widget .innerpadding,
 .column .innerpadding,
 nav ul > li > a,
-#site-titlebox .innerpadding
+#logobox .innerpadding
 {
 	padding:0px 5px;
 }

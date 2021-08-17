@@ -6,9 +6,9 @@
 // head javascript
 function custom_head_css(){
 
-  $content_width  = get_theme_mod( 'protago_screen_content_maxwidth', 'content');
-  $tablet_width   = get_theme_mod( 'protago_screen_tablet_maxwidth', 'content');
-  $mobile_width   = get_theme_mod( 'protago_screen_mobile_maxwidth', 'content');
+  $content_width  = get_theme_mod( 'protago_screen_content_maxwidth', '1480');
+  $tablet_width   = get_theme_mod( 'protago_screen_tablet_maxwidth', '1140');
+  $mobile_width   = get_theme_mod( 'protago_screen_mobile_maxwidth', '480');
 
 ?>
 <style>

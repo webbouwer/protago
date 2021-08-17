@@ -1,0 +1,92 @@
+
+#header
+{
+}
+
+#mainbar
+{
+}
+#mainbar .outermargin
+{
+  display:flex;
+}
+
+#mainbar.fit
+{
+}
+#mainbar.spaced .outermargin
+{
+  justify-content: space-between;
+}
+
+#mainbar .outermargin.center
+{
+  justify-content: center;
+}
+
+#mainbar.display-left .outermargin,
+#mainbar.display-inleft .outermargin
+{
+}
+
+#mainbar.display-center .outermargin,
+#mainbar.display-incenter .outermargin
+{
+  justify-content: center !important;
+}
+
+#mainbar.display-inright .outermargin,
+#mainbar.display-right .outermargin
+{
+  flex-direction: row-reverse;
+}
+
+
+
+#mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu
+ {
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-end;
+   margin: 0;
+   padding: 0;
+   list-style: none;
+ }
+
+ #mainbar.display-right #mainmenubox #mainmenu nav .innerpadding div > ul.menu,
+ #mainbar.display-inright #mainmenubox #mainmenu nav .innerpadding div > ul.menu
+ {
+   display: flex;
+   flex-direction: row-reverse;
+ }
+ #mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu > li
+ {
+   display: block;
+   transition-duration: 0.5s;
+ }
+ #mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu > li > a
+ {
+ }
+
+ #mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu > li > ul.sub-menu
+ {
+   visibility: hidden;
+   opacity: 0;
+   position: absolute;
+   transition: all 0.5s ease;
+   margin-top: 1rem;
+   left: 0;
+   display: none;
+ }
+ #mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu > li:hover > ul.sub-menu,
+ #mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu > li > ul.sub-menu li:hover
+ {
+   visibility: visible;
+   opacity: 1;
+   display: block;
+ }
+ #mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu > li:hover > ul.sub-menu > li
+ {
+   clear: both;
+   width: 100%;
+ }

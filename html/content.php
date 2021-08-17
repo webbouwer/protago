@@ -1,7 +1,5 @@
 <?php
 
-echo '<div id="postcontent"><div class="contentmargin">';
-
 echo '<div id="loopcontainer">';
 
 if ( have_posts() ) :
@@ -11,6 +9,7 @@ if ( have_posts() ) :
   ?>
 
     <div id="post-<?php echo get_the_ID(); ?>" <?php post_class(); ?>>
+    <div class="contentmargin">
     <?php
 
     if ( is_super_admin() && ( is_single() || is_page() ) ) {
@@ -21,7 +20,7 @@ if ( have_posts() ) :
     // time_post_public
 
     if( is_single() || is_page() ){
-      
+
         if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
 						the_post_thumbnail( 'full' );
 				}
@@ -44,20 +43,17 @@ if ( have_posts() ) :
 
     }
 
-    echo '</div>';
+    echo '</div></div>';
 
   endwhile;
 
 endif;
 
-echo '</div>'; // end loopcontainer
-
 wp_link_pages();
-
-echo '</div></div>'; // end postcontent
 
 wp_reset_query();
 
+echo '</div>'; // end loopcontainer
 
 
 // sidebar

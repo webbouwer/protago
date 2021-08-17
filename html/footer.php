@@ -1,6 +1,4 @@
 <?php
-
-
 // bottombar menu
 if ( has_nav_menu( 'footermenu' ) ){
    echo '<div id="footermenubox" class="column"><div id="footermenu" class="pos-default"><nav><div class="innerpadding">';
@@ -21,6 +19,13 @@ if( function_exists('is_sidebar_active') && is_sidebar_active('bottombar-widgets
 }
 
 
+
+$footnotes_display_width = get_theme_mod( 'protago_footnotes_display_width', 'content');
+
+if( $footnotes_display_width != 'hide' ){
+
+echo '<div id="footnotecontent"><div class="outermargin '.$footnotes_display_width.'">';
+
 // footnote_display
 $footnote_copyright_text = get_theme_mod( 'protago_footer_footnote_copyrighttext', 'Copyright 2021');
 
@@ -37,4 +42,8 @@ if( function_exists('is_sidebar_active') && is_sidebar_active('footnote-widgets-
   echo '<div id="footnote_widgets_2" class="column">';
     dynamic_sidebar('footnote-widgets-2');
   echo '</div>';
+}
+
+echo '</div></div>';
+
 }
