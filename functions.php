@@ -3,13 +3,13 @@
  * functions.php
  */
 
-require get_template_directory() . '/customizer.php'; // customizer init
-require get_template_directory() . '/assets/customizer_screen.php'; // screen
-require get_template_directory() . '/assets/customizer_header.php'; // screen
-require get_template_directory() . '/assets/customizer_content.php'; // screen
-require get_template_directory() . '/assets/customizer_footer.php'; // screen
-require get_template_directory() . '/assets/custom_js.php';
-require get_template_directory() . '/assets/custom_css.php';
+require_once get_template_directory() . '/customizer.php'; // customizer init
+require_once get_template_directory() . '/assets/customizer_screen.php'; // screen
+require_once get_template_directory() . '/assets/customizer_header.php'; // screen
+require_once get_template_directory() . '/assets/customizer_content.php'; // screen
+require_once get_template_directory() . '/assets/customizer_footer.php'; // screen
+require_once get_template_directory() . '/assets/custom_js.php';
+require_once get_template_directory() . '/assets/custom_css.php';
 
 /********* Wordpress Hooks & filters *********/
 
