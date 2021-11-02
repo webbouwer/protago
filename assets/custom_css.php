@@ -12,7 +12,7 @@ function custom_head_css(){
 
 ?>
 <style>
-
+/* large | tablet | mobile */
 .outermargin
 {
   position:relative;
@@ -28,11 +28,40 @@ function custom_head_css(){
 .outermargin.full
 {
   width:100%;
+  max-width:100%;
 }
 .outermargin.center
 {
-  width:auto;
-  min-width: <?php echo $mobile_width; ?>px;
+  width:96%;
+  max-width: <?php echo $content_width; ?>px;
+}
+
+/* header mainmenu */
+#mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu > li > a
+{
+}
+
+#mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu > li > ul.sub-menu
+{
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+  left: 0;
+  display: none;
+}
+#mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu > li:hover > ul.sub-menu,
+#mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu > li > ul.sub-menu li:hover
+{
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+#mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu > li:hover > ul.sub-menu > li
+{
+  clear: both;
+  width: 100%;
 }
 </style>
 <?php

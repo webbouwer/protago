@@ -2,7 +2,7 @@
 /*
  * header.php
  */
-// $options = get_option( 'protago_settings' );
+$options = get_option( 'protago_settings' ); 
 
 get_template_part('html/htmlhead');
 

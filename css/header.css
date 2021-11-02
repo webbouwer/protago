@@ -1,17 +1,104 @@
 
+/* wp defaults */
+/*
+.items-justified-left {
+    justify-content: flex-start;
+}
+.wp-block-social-links {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    padding-right: 0;
+    text-indent: 0;
+    margin-left: 0;
+}
+
+
+#mainbar.display-left .outermargin,
+#mainbar.display-inleft .outermargin {
+  display: flex;
+  justify-content: space-between;
+}
+
+#mainbar.display-right .outermargin,
+#mainbar.display-inright .outermargin {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+#mainbar.display-incenter .outermargin,
+#mainbar.display-center .outermargin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile #mainbar .outermargin {
+  display: block;
+}
+
+.display-incenter #mainmenubox,
+.display-center #mainmenubox,
+.display-center #site-titlebox {
+  flex: 1;
+  text-align: center;
+}
+
+#mainbar #mainmenubox #mainmenu nav .innerpadding div>ul.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#mainbar.display-right #mainmenubox #mainmenu nav .innerpadding div > ul.menu,
+#mainbar.display-inright #mainmenubox #mainmenu nav .innerpadding div > ul.menu {
+  display: flex;
+  flex-direction: row-reverse;
+}
+#mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu > li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu > li > a {
+  padding: 10px;
+  display: block;
+}
+#mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu > li#item-logobox {
+  flex: 2;
+}
+#mainbar .outermargin>#mainbar_widgets_1,
+#mainbar .outermargin>#mainbar_widgets_2
+{
+	flex: 1;
+	background-color:green;
+}
+
+#mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu > li > ul.submenu {
+  display: none;
+}
+
+.mobile #mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu {
+  display: block;
+}
+.mobile #mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu > li {}
+*/
+
 #header
 {
 }
 
-#mainbar
-{
-}
 #mainbar .outermargin
 {
   display:flex;
 }
 
-#mainbar.fit
+#mainbar.fit .outermargin
 {
 }
 #mainbar.spaced .outermargin
@@ -19,39 +106,106 @@
   justify-content: space-between;
 }
 
+
 #mainbar .outermargin.center
 {
   justify-content: center;
 }
+#mainbar.spaced .outermargin.full
+{
+  width:100% !important;
+}
 
 #mainbar.display-left .outermargin,
-#mainbar.display-inleft .outermargin
-{
+#mainbar.display-inleft .outermargin {
+}
+#mainbar.spaced.display-left .outermargin,
+#mainbar.spaced.display-inleft .outermargin,
+#mainbar.spaced.display-left .outermargin.full,
+#mainbar.spaced.display-inleft .outermargin.full,
+#mainbar.spaced.display-left .outermargin.content,
+#mainbar.spaced.display-inleft .outermargin.content {
+  justify-content: space-between;
 }
 
-#mainbar.display-center .outermargin,
-#mainbar.display-incenter .outermargin
-{
-  justify-content: center !important;
-}
-
-#mainbar.display-inright .outermargin,
-#mainbar.display-right .outermargin
-{
+#mainbar.display-right .outermargin,
+#mainbar.display-inright .outermargin {
   flex-direction: row-reverse;
 }
+#mainbar.spaced.display-right .outermargin,
+#mainbar.spaced.display-inright .outermargin,
+#mainbar.spaced.display-right .outermargin.full,
+#mainbar.spaced.display-inright .outermargin.full,
+#mainbar.spaced.display-right .outermargin.content,
+#mainbar.spaced.display-inright .outermargin.content {
+  justify-content: space-between;
+}
 
+#mainbar.display-incenter .outermargin,
+#mainbar.display-center .outermargin {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#mainbar.spaced.display-center .outermargin,
+#mainbar.spaced.display-incenter .outermargin,
+#mainbar.spaced.display-center .outermargin.full,
+#mainbar.spaced.display-incenter .outermargin.full,
+#mainbar.spaced.display-center .outermargin.content,
+#mainbar.spaced.display-incenter .outermargin.content {
+  justify-content: space-between;
+}
+
+#mainbar.spaced #logobox,
+#mainbar.spaced #mainbar_widgets_1,
+#mainbar.spaced #mainbar_widgets_2
+{
+  display: flex;
+  flex:1;
+}
+#mainbar.spaced #mainmenubox
+{
+  flex:3;
+}
+
+#mainbar.spaced .outermargin.center #logobox,
+#mainbar.spaced .outermargin.center #mainbar_widgets_1,
+#mainbar.spaced .outermargin.center #mainbar_widgets_2,
+#mainbar.spaced .outermargin.center #mainmenubox
+{
+  display:inline-block;
+  flex:none;
+  justify-content: center;
+}
+
+
+
+#mainbar.spaced.display-left .outermargin #mainbar_widgets_1,
+#mainbar.spaced.display-inleft .outermargin  #mainbar_widgets_1,
+#mainbar.spaced.display-left .outermargin #mainbar_widgets_2,
+#mainbar.spaced.display-inleft .outermargin  #mainbar_widgets_2
+{
+  justify-content: flex-end;
+}
 
 
 #mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu
  {
    display: flex;
    flex-direction: row;
-   justify-content: flex-end;
    margin: 0;
    padding: 0;
    list-style: none;
  }
+
+ #mainbar.display-right .outermargin #logobox,
+ #mainbar.display-inright .outermargin #logobox,
+ #mainbar.display-left .outermargin #mainmenu nav .innerpadding div > ul.menu,
+ #mainbar.display-right .outermargin  #mainmenu nav .innerpadding div > ul.menu
+ {
+   justify-content: flex-end;
+ }
+
 
  #mainbar.display-right #mainmenubox #mainmenu nav .innerpadding div > ul.menu,
  #mainbar.display-inright #mainmenubox #mainmenu nav .innerpadding div > ul.menu
@@ -64,29 +218,10 @@
    display: block;
    transition-duration: 0.5s;
  }
- #mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu > li > a
- {
- }
 
- #mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu > li > ul.sub-menu
- {
-   visibility: hidden;
-   opacity: 0;
-   position: absolute;
-   transition: all 0.5s ease;
-   margin-top: 1rem;
-   left: 0;
-   display: none;
- }
- #mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu > li:hover > ul.sub-menu,
- #mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu > li > ul.sub-menu li:hover
- {
-   visibility: visible;
-   opacity: 1;
-   display: block;
- }
- #mainbar #mainmenubox #mainmenu nav .innerpadding div > ul.menu > li:hover > ul.sub-menu > li
- {
-   clear: both;
-   width: 100%;
- }
+
+
+/* TODO center menu and widgets inline / inline centered logo
+
+
+*/
